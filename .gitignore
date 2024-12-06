@@ -1,0 +1,4 @@
+*.bkp
+.vscode/
+evaluation/eval_env/
+evaluation/.ipynb_checkpoints/
