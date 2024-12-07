@@ -1,0 +1,31 @@
+CQ1: What is prompt engineering?
+
+CQ2: What is a prompt?
+
+CQ3: What are prompting techniques?
+
+CQ4: What are image prompting techniques?
+
+CQ5: What are code prompting techniques?
+
+CQ6: Which task does a prompt solve?
+
+CQ7: Which prompts are generated using a prompting technique?
+
+CQ8: What are the responses that follow each prompt?
+
+CQ9: What are possible tasks?
+
+CQ10: Which tasks are related to the text?
+
+CQ11: What is a chat?
+
+CQ12: What is a large language model?
+
+CQ13: What types of large language models are available?
+
+CQ14: What are large language models architectures?
+
+CQ15: What are large language models capabilities?
+
+CQ16: What companies develop large language models?
