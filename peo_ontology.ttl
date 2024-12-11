@@ -11,11 +11,12 @@
 @base <https://w3id.org/peo#/> .
 
 <https://w3id.org/peo#> rdf:type owl:Ontology ;
+                         rdfs:comment "The PEO ontology is a modern ontology that covers state-of-art prompt engineering techniques and large language models. The ontology is designed to support students, researchers and developers who want to know more about prompt engineering, applying prompting techniques in solving tasks." ;
                          rdfs:label "PEO ontology: an ontology for prompt engineering and large language models." ;
                          owl:versionInfo 1.0 ;
                          peo:creator "Simone Gramegna" ;
-                         peo:description "The PEO ontology is a modern ontology that covers state-of-art prompt engineering techniques and large language models. The ontology is designed to support students, researchers and developers who want to know more about prompt engineering, applying prompting techniques in solving tasks." ;
-                         peo:language "english" .
+                         peo:language "english" ;
+                         peo:license "GPL-3.0 license" .
 
 #################################################################
 #    Annotation properties
@@ -29,12 +30,12 @@ swrla:isRuleEnabled rdf:type owl:AnnotationProperty .
 peo:creator rdf:type owl:AnnotationProperty .
 
 
-###  https://w3id.org/peo#description
-peo:description rdf:type owl:AnnotationProperty .
-
-
 ###  https://w3id.org/peo#language
 peo:language rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/peo#license
+peo:license rdf:type owl:AnnotationProperty .
 
 
 ###  https://w3id.org/peo#paper
@@ -59,8 +60,8 @@ peo:based_on rdf:type owl:ObjectProperty ;
              owl:inverseOf peo:basis_for ;
              rdfs:domain peo:large_language_model ;
              rdfs:range peo:large_language_model ;
-             rdfs:label "based_on" ;
-             peo:description "Relationship between to two large language models in which a large language model uses another large language model as base." .
+             rdfs:comment "Relationship between to two large language models in which a large language model uses another large language model as base." ;
+             rdfs:label "based_on" .
 
 
 ###  https://w3id.org/peo#basis_for
@@ -68,8 +69,8 @@ peo:basis_for rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf owl:topObjectProperty ;
               rdfs:domain peo:large_language_model ;
               rdfs:range peo:large_language_model ;
-              rdfs:label "basis_for" ;
-              peo:description "Relationship between to two large language models in which a large language model is the base of another large language model." .
+              rdfs:comment "Relationship between to two large language models in which a large language model is the base of another large language model." ;
+              rdfs:label "basis_for" .
 
 
 ###  https://w3id.org/peo#developed_by
@@ -78,8 +79,8 @@ peo:developed_by rdf:type owl:ObjectProperty ;
                  owl:inverseOf peo:develops ;
                  rdfs:domain peo:large_language_model ;
                  rdfs:range peo:organization ;
-                 rdfs:label "developed_by" ;
-                 peo:description "Relationship between a large language model and an organization, where the model is developed by the organization." .
+                 rdfs:comment "Relationship between a large language model and an organization, where the model is developed by the organization." ;
+                 rdfs:label "developed_by" .
 
 
 ###  https://w3id.org/peo#develops
@@ -87,8 +88,8 @@ peo:develops rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf owl:topObjectProperty ;
              rdfs:domain peo:organization ;
              rdfs:range peo:large_language_model ;
-             rdfs:label "develops" ;
-             peo:description "Relationship between a large language model and an organization, where the organization develops the model." .
+             rdfs:comment "Relationship between a large language model and an organization, where the organization develops the model." ;
+             rdfs:label "develops" .
 
 
 ###  https://w3id.org/peo#evolved_from
@@ -98,8 +99,8 @@ peo:evolved_from rdf:type owl:ObjectProperty ;
                  rdf:type owl:TransitiveProperty ;
                  rdfs:domain peo:large_language_model ;
                  rdfs:range peo:large_language_model ;
-                 rdfs:label "evolved_from" ;
-                 peo:description "Relationship between two large language models (x and y), where x is evolved from y." .
+                 rdfs:comment "Relationship between two large language models (x and y), where x is evolved from y." ;
+                 rdfs:label "evolved_from" .
 
 
 ###  https://w3id.org/peo#evolves
@@ -108,8 +109,8 @@ peo:evolves rdf:type owl:ObjectProperty ;
             rdf:type owl:TransitiveProperty ;
             rdfs:domain peo:large_language_model ;
             rdfs:range peo:large_language_model ;
-            rdfs:label "evolves" ;
-            peo:description "Relationship between two large language models (x and y), where x is evolves y." .
+            rdfs:comment "Relationship between two large language models (x and y), where x is evolves y." ;
+            rdfs:label "evolves" .
 
 
 ###  https://w3id.org/peo#generates_response
@@ -118,8 +119,8 @@ peo:generates_response rdf:type owl:ObjectProperty ;
                        owl:inverseOf peo:response_generated_using ;
                        rdfs:domain peo:large_language_model ;
                        rdfs:range peo:response ;
-                       rdfs:label "generates_response" ;
-                       peo:description "Relationship between a large language models and a response, where the llm generates the response." .
+                       rdfs:comment "Relationship between a large language models and a response, where the llm generates the response." ;
+                       rdfs:label "generates_response" .
 
 
 ###  https://w3id.org/peo#has_capability
@@ -128,8 +129,8 @@ peo:has_capability rdf:type owl:ObjectProperty ;
                    owl:inverseOf peo:is_capability ;
                    rdfs:domain peo:large_language_model ;
                    rdfs:range peo:capability ;
-                   rdfs:label "has_capability" ;
-                   peo:description "Relationship between a large language model and a capability, where the llm has that capability." .
+                   rdfs:comment "Relationship between a large language model and a capability, where the llm has that capability." ;
+                   rdfs:label "has_capability" .
 
 
 ###  https://w3id.org/peo#has_context
@@ -138,8 +139,8 @@ peo:has_context rdf:type owl:ObjectProperty ;
                 owl:inverseOf peo:has_prompt ;
                 rdfs:domain peo:prompt ;
                 rdfs:range peo:chat ;
-                rdfs:label "has_context" ;
-                peo:description "Relationship between a prompt and a chat, where the prompt has as context the chat." .
+                rdfs:comment "Relationship between a prompt and a chat, where the prompt has as context the chat." ;
+                rdfs:label "has_context" .
 
 
 ###  https://w3id.org/peo#has_model_architecture
@@ -148,8 +149,8 @@ peo:has_model_architecture rdf:type owl:ObjectProperty ;
                            owl:inverseOf peo:is_model_architecture_of ;
                            rdfs:domain peo:large_language_model ;
                            rdfs:range peo:base_model ;
-                           rdfs:label "has_model_architecture" ;
-                           peo:description "Relationship between a large language model and a basic model, where the model is the component of  the large language model." .
+                           rdfs:comment "Relationship between a large language model and a basic model, where the model is the component of  the large language model." ;
+                           rdfs:label "has_model_architecture" .
 
 
 ###  https://w3id.org/peo#has_organization
@@ -158,8 +159,8 @@ peo:has_organization rdf:type owl:ObjectProperty ;
                      owl:inverseOf peo:is_organization_of ;
                      rdfs:domain peo:organization ;
                      rdfs:range peo:organization ;
-                     rdfs:label "has_organization" ;
-                     peo:description "Relationship between two organizations (x and y) where, x controls the organization y." .
+                     rdfs:comment "Relationship between two organizations (x and y) where, x controls the organization y." ;
+                     rdfs:label "has_organization" .
 
 
 ###  https://w3id.org/peo#has_prompt
@@ -167,8 +168,8 @@ peo:has_prompt rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf owl:topObjectProperty ;
                rdfs:domain peo:chat ;
                rdfs:range peo:prompt ;
-               rdfs:label "has_prompt" ;
-               peo:description "Relation between chat and a prompt, where the chat has that prompt." .
+               rdfs:comment "Relation between chat and a prompt, where the chat has that prompt." ;
+               rdfs:label "has_prompt" .
 
 
 ###  https://w3id.org/peo#has_response
@@ -177,8 +178,8 @@ peo:has_response rdf:type owl:ObjectProperty ;
                  owl:inverseOf peo:is_response_of ;
                  rdfs:domain peo:chat ;
                  rdfs:range peo:response ;
-                 rdfs:label "has_response" ;
-                 peo:description "Relation between a chat and a response, where the chat has that response." .
+                 rdfs:comment "Relation between a chat and a response, where the chat has that response." ;
+                 rdfs:label "has_response" .
 
 
 ###  https://w3id.org/peo#has_variant
@@ -187,8 +188,8 @@ peo:has_variant rdf:type owl:ObjectProperty ;
                 rdf:type owl:IrreflexiveProperty ;
                 rdfs:domain peo:large_language_model ;
                 rdfs:range peo:large_language_model ;
-                rdfs:label "has_variant" ;
-                peo:description "Relation between two large language models (x and y), where x has y as another version." .
+                rdfs:comment "Relation between two large language models (x and y), where x has y as another version." ;
+                rdfs:label "has_variant" .
 
 
 ###  https://w3id.org/peo#is_capability
@@ -196,8 +197,8 @@ peo:is_capability rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf owl:topObjectProperty ;
                   rdfs:domain peo:capability ;
                   rdfs:range peo:large_language_model ;
-                  rdfs:label "is_capability" ;
-                  peo:description "Relationship between a capability and a large language model, where the capability is capability of the llm." .
+                  rdfs:comment "Relationship between a capability and a large language model, where the capability is capability of the llm." ;
+                  rdfs:label "is_capability" .
 
 
 ###  https://w3id.org/peo#is_model_architecture_of
@@ -205,8 +206,8 @@ peo:is_model_architecture_of rdf:type owl:ObjectProperty ;
                              rdfs:subPropertyOf owl:topObjectProperty ;
                              rdfs:domain peo:base_model ;
                              rdfs:range peo:large_language_model ;
-                             rdfs:label "is_model_architecture_of" ;
-                             peo:description "Relationship between a base model and a large language model, where the base model is used as architecture of the llm." .
+                             rdfs:comment "Relationship between a base model and a large language model, where the base model is used as architecture of the llm." ;
+                             rdfs:label "is_model_architecture_of" .
 
 
 ###  https://w3id.org/peo#is_organization_of
@@ -214,8 +215,8 @@ peo:is_organization_of rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf owl:topObjectProperty ;
                        rdfs:domain peo:organization ;
                        rdfs:range peo:organization ;
-                       rdfs:label "is_organization_of" ;
-                       peo:description "Relationship between an organization x and another organization y, where x is controlled by y." .
+                       rdfs:comment "Relationship between an organization x and another organization y, where x is controlled by y." ;
+                       rdfs:label "is_organization_of" .
 
 
 ###  https://w3id.org/peo#is_response_of
@@ -223,8 +224,8 @@ peo:is_response_of rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf owl:topObjectProperty ;
                    rdfs:domain peo:response ;
                    rdfs:range peo:chat ;
-                   rdfs:label "is_response_of" ;
-                   peo:description "Response belongs to a chat" .
+                   rdfs:comment "Response belongs to a chat" ;
+                   rdfs:label "is_response_of" .
 
 
 ###  https://w3id.org/peo#is_used_in_chat
@@ -233,8 +234,8 @@ peo:is_used_in_chat rdf:type owl:ObjectProperty ;
                     owl:inverseOf peo:uses_model ;
                     rdfs:domain peo:large_language_model ;
                     rdfs:range peo:chat ;
-                    rdfs:label "is_used_in_chat" ;
-                    peo:description "Relation between a large language model and a chat, where the model is used in that chat" .
+                    rdfs:comment "Relation between a large language model and a chat, where the model is used in that chat" ;
+                    rdfs:label "is_used_in_chat" .
 
 
 ###  https://w3id.org/peo#is_used_in_prompt
@@ -243,8 +244,8 @@ peo:is_used_in_prompt rdf:type owl:ObjectProperty ;
                       owl:inverseOf peo:prompt_generated_using ;
                       rdfs:domain peo:prompting_technique ;
                       rdfs:range peo:prompt ;
-                      rdfs:label "is_used_in_prompt" ;
-                      peo:description "Relation between a prompt and a prompting technique, where the prompt is generated using that prompting technique" .
+                      rdfs:comment "Relation between a prompt and a prompting technique, where the prompt is generated using that prompting technique" ;
+                      rdfs:label "is_used_in_prompt" .
 
 
 ###  https://w3id.org/peo#processed_by
@@ -253,8 +254,8 @@ peo:processed_by rdf:type owl:ObjectProperty ;
                  owl:inverseOf peo:processes ;
                  rdfs:domain peo:prompt ;
                  rdfs:range peo:large_language_model ;
-                 rdfs:label "processed_by" ;
-                 peo:description "Relation between a prompt and a large language model, where the prompt is given as input to the large language model" .
+                 rdfs:comment "Relation between a prompt and a large language model, where the prompt is given as input to the large language model" ;
+                 rdfs:label "processed_by" .
 
 
 ###  https://w3id.org/peo#processes
@@ -262,8 +263,8 @@ peo:processes rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf owl:topObjectProperty ;
               rdfs:domain peo:large_language_model ;
               rdfs:range peo:prompt ;
-              rdfs:label "processes" ;
-              peo:description "Relation between a large language model and a prompt, where the large language model processes the prompt" .
+              rdfs:comment "Relation between a large language model and a prompt, where the large language model processes the prompt" ;
+              rdfs:label "processes" .
 
 
 ###  https://w3id.org/peo#prompt_followedby_prompt
@@ -272,8 +273,8 @@ peo:prompt_followedby_prompt rdf:type owl:ObjectProperty ;
                              owl:inverseOf peo:prompt_follows_prompt ;
                              rdfs:domain peo:prompt ;
                              rdfs:range peo:prompt ;
-                             rdfs:label "prompt_followedby_prompt" ;
-                             peo:description "The first prompt is after the second prompt" .
+                             rdfs:comment "The first prompt is after the second prompt" ;
+                             rdfs:label "prompt_followedby_prompt" .
 
 
 ###  https://w3id.org/peo#prompt_followedby_response
@@ -282,8 +283,8 @@ peo:prompt_followedby_response rdf:type owl:ObjectProperty ;
                                owl:inverseOf peo:response_follows_prompt ;
                                rdfs:domain peo:prompt ;
                                rdfs:range peo:response ;
-                               rdfs:label "prompt_followedby_response" ;
-                               peo:description "Prompt is after response" .
+                               rdfs:comment "Prompt is after response" ;
+                               rdfs:label "prompt_followedby_response" .
 
 
 ###  https://w3id.org/peo#prompt_follows_prompt
@@ -291,8 +292,8 @@ peo:prompt_follows_prompt rdf:type owl:ObjectProperty ;
                           rdfs:subPropertyOf owl:topObjectProperty ;
                           rdfs:domain peo:prompt ;
                           rdfs:range peo:prompt ;
-                          rdfs:label "prompt_follows_prompt" ;
-                          peo:description "The second prompt is after the first prompt" .
+                          rdfs:comment "The second prompt is after the first prompt" ;
+                          rdfs:label "prompt_follows_prompt" .
 
 
 ###  https://w3id.org/peo#prompt_follows_response
@@ -301,8 +302,8 @@ peo:prompt_follows_response rdf:type owl:ObjectProperty ;
                             owl:inverseOf peo:response_followedby_prompt ;
                             rdfs:domain peo:prompt ;
                             rdfs:range peo:response ;
-                            rdfs:label "prompt_follows_response" ;
-                            peo:description "Response is after prompt" .
+                            rdfs:comment "Response is after prompt" ;
+                            rdfs:label "prompt_follows_response" .
 
 
 ###  https://w3id.org/peo#prompt_generated_using
@@ -310,8 +311,8 @@ peo:prompt_generated_using rdf:type owl:ObjectProperty ;
                            rdfs:subPropertyOf owl:topObjectProperty ;
                            rdfs:domain peo:prompt ;
                            rdfs:range peo:prompting_technique ;
-                           rdfs:label "prompt_generated_using" ;
-                           peo:description "Prompt generated using a prompting technique" .
+                           rdfs:comment "Prompt generated using a prompting technique" ;
+                           rdfs:label "prompt_generated_using" .
 
 
 ###  https://w3id.org/peo#response_followedby_prompt
@@ -319,8 +320,8 @@ peo:response_followedby_prompt rdf:type owl:ObjectProperty ;
                                rdfs:subPropertyOf owl:topObjectProperty ;
                                rdfs:domain peo:response ;
                                rdfs:range peo:prompt ;
-                               rdfs:label "response_followedby_prompt" ;
-                               peo:description "Response is after a prompt" .
+                               rdfs:comment "Response is after a prompt" ;
+                               rdfs:label "response_followedby_prompt" .
 
 
 ###  https://w3id.org/peo#response_follows_prompt
@@ -328,8 +329,8 @@ peo:response_follows_prompt rdf:type owl:ObjectProperty ;
                             rdfs:subPropertyOf owl:topObjectProperty ;
                             rdfs:domain peo:response ;
                             rdfs:range peo:prompt ;
-                            rdfs:label "response_follows_prompt" ;
-                            peo:description "Prompt is after response" .
+                            rdfs:comment "Prompt is after response" ;
+                            rdfs:label "response_follows_prompt" .
 
 
 ###  https://w3id.org/peo#response_generated_using
@@ -337,8 +338,8 @@ peo:response_generated_using rdf:type owl:ObjectProperty ;
                              rdfs:subPropertyOf owl:topObjectProperty ;
                              rdfs:domain peo:response ;
                              rdfs:range peo:large_language_model ;
-                             rdfs:label "response_generated_using" ;
-                             peo:description "Response generated using a large language model" .
+                             rdfs:comment "Response generated using a large language model" ;
+                             rdfs:label "response_generated_using" .
 
 
 ###  https://w3id.org/peo#solved_by
@@ -347,8 +348,8 @@ peo:solved_by rdf:type owl:ObjectProperty ;
               owl:inverseOf peo:solves ;
               rdfs:domain peo:task ;
               rdfs:range peo:prompting_technique ;
-              rdfs:label "solved_by" ;
-              peo:description "Task solved by a prompting technique" .
+              rdfs:comment "Task solved by a prompting technique" ;
+              rdfs:label "solved_by" .
 
 
 ###  https://w3id.org/peo#solves
@@ -356,8 +357,8 @@ peo:solves rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf owl:topObjectProperty ;
            rdfs:domain peo:prompting_technique ;
            rdfs:range peo:task ;
-           rdfs:label "solves_task" ;
-           peo:description "Relation between a prompting technique and a task, where the technique solves that task." .
+           rdfs:comment "Relation between a prompting technique and a task, where the technique solves that task." ;
+           rdfs:label "solves_task" .
 
 
 ###  https://w3id.org/peo#uses_model
@@ -365,8 +366,8 @@ peo:uses_model rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf owl:topObjectProperty ;
                rdfs:domain peo:chat ;
                rdfs:range peo:large_language_model ;
-               rdfs:label "uses_model" ;
-               peo:description "Realtion between a chat and a large language model, where the chat is with the large language model" .
+               rdfs:comment "Realtion between a chat and a large language model, where the chat is with the large language model" ;
+               rdfs:label "uses_model" .
 
 
 #################################################################
@@ -378,8 +379,8 @@ peo:end_time_chat rdf:type owl:DatatypeProperty ;
                   rdfs:subPropertyOf owl:topDataProperty ;
                   rdfs:domain peo:chat ;
                   rdfs:range xsd:string ;
-                  rdfs:label "end_time_chat" ;
-                  peo:description "End time of a chat." .
+                  rdfs:comment "End time of a chat." ;
+                  rdfs:label "end_time_chat" .
 
 
 ###  https://w3id.org/peo#has_chat_title
@@ -388,8 +389,8 @@ peo:has_chat_title rdf:type owl:DatatypeProperty ;
                    rdf:type owl:FunctionalProperty ;
                    rdfs:domain peo:chat ;
                    rdfs:range xsd:string ;
-                   rdfs:label "has_chat_title" ;
-                   peo:description "Title of a chat." .
+                   rdfs:comment "Title of a chat." ;
+                   rdfs:label "has_chat_title" .
 
 
 ###  https://w3id.org/peo#has_description
@@ -397,8 +398,8 @@ peo:has_description rdf:type owl:DatatypeProperty ;
                     rdfs:subPropertyOf owl:topDataProperty ;
                     rdfs:domain peo:task ;
                     rdfs:range xsd:string ;
-                    rdfs:label "has_description" ;
-                    peo:description "Description of a task" .
+                    rdfs:comment "Description of a task" ;
+                    rdfs:label "has_description" .
 
 
 ###  https://w3id.org/peo#has_input_data
@@ -406,16 +407,17 @@ peo:has_input_data rdf:type owl:DatatypeProperty ;
                    rdfs:subPropertyOf owl:topDataProperty ;
                    rdfs:domain peo:prompt ;
                    rdfs:range xsd:string ;
-                   rdfs:label "has_input_data" ;
-                   peo:description "Input data of a prompt." .
+                   rdfs:comment "Input data of a prompt." ;
+                   rdfs:label "has_input_data" .
 
 
 ###  https://w3id.org/peo#has_instruction
 peo:has_instruction rdf:type owl:DatatypeProperty ;
                     rdfs:subPropertyOf owl:topDataProperty ;
+                    rdfs:domain peo:prompt ;
                     rdfs:range xsd:string ;
-                    rdfs:label "has_instruction" ;
-                    peo:description "Instruction of a prompt." .
+                    rdfs:comment "Instruction of a prompt." ;
+                    rdfs:label "has_instruction" .
 
 
 ###  https://w3id.org/peo#has_number_parameters
@@ -424,8 +426,8 @@ peo:has_number_parameters rdf:type owl:DatatypeProperty ;
                           rdf:type owl:FunctionalProperty ;
                           rdfs:domain peo:large_language_model ;
                           rdfs:range xsd:long ;
-                          rdfs:label "has_number_parameters" ;
-                          peo:description "Number of parameters of a large language model." .
+                          rdfs:comment "Number of parameters of a large language model." ;
+                          rdfs:label "has_number_parameters" .
 
 
 ###  https://w3id.org/peo#has_output_indicator
@@ -433,8 +435,8 @@ peo:has_output_indicator rdf:type owl:DatatypeProperty ;
                          rdfs:subPropertyOf owl:topDataProperty ;
                          rdfs:domain peo:prompt ;
                          rdfs:range xsd:string ;
-                         rdfs:label "has_output_indicator" ;
-                         peo:description "Output format of the response of a prompt." .
+                         rdfs:comment "Output format of the response of a prompt." ;
+                         rdfs:label "has_output_indicator" .
 
 
 ###  https://w3id.org/peo#has_release_year
@@ -443,8 +445,8 @@ peo:has_release_year rdf:type owl:DatatypeProperty ;
                      rdf:type owl:FunctionalProperty ;
                      rdfs:domain peo:large_language_model ;
                      rdfs:range xsd:integer ;
-                     rdfs:label "has_release_year" ;
-                     peo:description "Release year of a large language model." .
+                     rdfs:comment "Release year of a large language model." ;
+                     rdfs:label "has_release_year" .
 
 
 ###  https://w3id.org/peo#has_response_value
@@ -453,8 +455,8 @@ peo:has_response_value rdf:type owl:DatatypeProperty ;
                        rdf:type owl:FunctionalProperty ;
                        rdfs:domain peo:response ;
                        rdfs:range xsd:string ;
-                       rdfs:label "has_response_value" ;
-                       peo:description "What is written in the response." .
+                       rdfs:comment "What is written in the response." ;
+                       rdfs:label "has_response_value" .
 
 
 ###  https://w3id.org/peo#official_website
@@ -463,8 +465,8 @@ peo:official_website rdf:type owl:DatatypeProperty ;
                      rdf:type owl:FunctionalProperty ;
                      rdfs:domain peo:organization ;
                      rdfs:range xsd:string ;
-                     rdfs:label "official_website" ;
-                     peo:description "Official website of an organization." .
+                     rdfs:comment "Official website of an organization." ;
+                     rdfs:label "official_website" .
 
 
 ###  https://w3id.org/peo#registered_name
@@ -473,8 +475,8 @@ peo:registered_name rdf:type owl:DatatypeProperty ;
                     rdf:type owl:FunctionalProperty ;
                     rdfs:domain peo:organization ;
                     rdfs:range xsd:string ;
-                    rdfs:label "registered_name" ;
-                    peo:description "Registered name of an organization." .
+                    rdfs:comment "Registered name of an organization." ;
+                    rdfs:label "registered_name" .
 
 
 ###  https://w3id.org/peo#start_time_chat
@@ -483,8 +485,8 @@ peo:start_time_chat rdf:type owl:DatatypeProperty ;
                     rdf:type owl:FunctionalProperty ;
                     rdfs:domain peo:chat ;
                     rdfs:range xsd:string ;
-                    rdfs:label "start_time_chat" ;
-                    peo:description "Start time of a chat." .
+                    rdfs:comment "Start time of a chat." ;
+                    rdfs:label "start_time_chat" .
 
 
 #################################################################
@@ -494,8 +496,8 @@ peo:start_time_chat rdf:type owl:DatatypeProperty ;
 ###  https://w3id.org/peo#active_prompting
 peo:active_prompting rdf:type owl:Class ;
                      rdfs:subClassOf peo:prompting_technique ;
+                     rdfs:comment "Technique where specific, dynamic instructions are given to a model to guide it through a multi-step or interactive process, often requiring the model to actively engage, reflect, or respond iteratively to achieve a targeted outcome." ;
                      rdfs:label "Active prompting" ;
-                     peo:description "Technique where specific, dynamic instructions are given to a model to guide it through a multi-step or interactive process, often requiring the model to actively engage, reflect, or respond iteratively to achieve a targeted outcome." ;
                      peo:reference "https://arxiv.org/abs/2302.12246" .
 
 
@@ -514,8 +516,8 @@ peo:alpaca rdf:type owl:Class ;
                              owl:onProperty peo:has_model_architecture ;
                              owl:someValuesFrom peo:transformer
                            ] ;
+           rdfs:comment "Fine-tuned language model for instruction-following tasks based on Meta's LLaMA model." ;
            rdfs:label "Alpaca" ;
-           peo:description "Fine-tuned language model for instruction-following tasks based on Meta's LLaMA model." ;
            peo:paper "n.a." ;
            peo:website "https://crfm.stanford.edu/2023/03/13/alpaca.html" .
 
@@ -523,51 +525,51 @@ peo:alpaca rdf:type owl:Class ;
 ###  https://w3id.org/peo#analogical_prompting
 peo:analogical_prompting rdf:type owl:Class ;
                          rdfs:subClassOf peo:prompting_technique ;
+                         rdfs:comment "Technique that guides large language models to self-generate relevant examples or knowledge based on analogies, aiding them in reasoning through new problems without labeled exemplars." ;
                          rdfs:label "Analogical prompting" ;
-                         peo:description "Technique that guides large language models to self-generate relevant examples or knowledge based on analogies, aiding them in reasoning through new problems without labeled exemplars." ;
                          peo:reference "https://arxiv.org/pdf/2310.01714" .
 
 
 ###  https://w3id.org/peo#audio_explanation
 peo:audio_explanation rdf:type owl:Class ;
                       rdfs:subClassOf peo:audio_task ;
-                      rdfs:label "Audio explanation" ;
-                      peo:description "Explanation of the content of an audio file." .
+                      rdfs:comment "Explanation of the content of an audio file." ;
+                      rdfs:label "Audio explanation" .
 
 
 ###  https://w3id.org/peo#audio_generation
 peo:audio_generation rdf:type owl:Class ;
                      rdfs:subClassOf peo:audio_task ;
-                     rdfs:label "Audio generation" ;
-                     peo:description "Generation of an audio file." .
+                     rdfs:comment "Generation of an audio file." ;
+                     rdfs:label "Audio generation" .
 
 
 ###  https://w3id.org/peo#audio_processing
 peo:audio_processing rdf:type owl:Class ;
                      rdfs:subClassOf peo:capability ;
-                     rdfs:label "Audio processing" ;
-                     peo:description "Capability to process audio files." .
+                     rdfs:comment "Capability to process audio files." ;
+                     rdfs:label "Audio processing" .
 
 
 ###  https://w3id.org/peo#audio_task
 peo:audio_task rdf:type owl:Class ;
                rdfs:subClassOf peo:task ;
-               rdfs:label "Audio task" ;
-               peo:description "Task involving audio files." .
+               rdfs:comment "Task involving audio files." ;
+               rdfs:label "Audio task" .
 
 
 ###  https://w3id.org/peo#automatic_cot_prompting
 peo:automatic_cot_prompting rdf:type owl:Class ;
                             rdfs:subClassOf peo:prompting_technique ;
+                            rdfs:comment "Technique where models autonomously generate step-by-step reasoning, enhancing structured problem-solving without explicit intermediate prompts." ;
                             rdfs:label "Automatic Chain-of-Thought prompting" ;
-                            peo:description "Technique where models autonomously generate step-by-step reasoning, enhancing structured problem-solving without explicit intermediate prompts." ;
                             peo:reference "https://arxiv.org/abs/2210.03493" .
 
 
 ###  https://w3id.org/peo#base_model
 peo:base_model rdf:type owl:Class ;
-               rdfs:label "Base model" ;
-               peo:description "Base model used as base architecture by each large language model." .
+               rdfs:comment "Base model used as base architecture by each large language model." ;
+               rdfs:label "Base model" .
 
 
 ###  https://w3id.org/peo#bert
@@ -581,8 +583,8 @@ peo:bert rdf:type owl:Class ;
                            owl:onProperty peo:has_model_architecture ;
                            owl:someValuesFrom peo:encoder_only
                          ] ;
+         rdfs:comment "(Bidirectional Encoder Representations from Transformers) An LLM by Google designed for NLP tasks, known for understanding context in both directions within text." ;
          rdfs:label "BERT" ;
-         peo:description "(Bidirectional Encoder Representations from Transformers) An LLM by Google designed for NLP tasks, known for understanding context in both directions within text." ;
          peo:paper "https://aclanthology.org/N19-1423.pdf" ;
          peo:website "https://huggingface.co/bert-base-uncased" .
 
@@ -598,8 +600,8 @@ peo:blip-2 rdf:type owl:Class ;
                              owl:onProperty peo:has_model_architecture ;
                              owl:someValuesFrom peo:q_former
                            ] ;
+           rdfs:comment "Multimodal model that integrates a frozen image encoder with a large language model via a Querying Transformer, enabling tasks like image captioning and visual question answering." ;
            rdfs:label "BLIP-2" ;
-           peo:description "Multimodal model that integrates a frozen image encoder with a large language model via a Querying Transformer, enabling tasks like image captioning and visual question answering." ;
            peo:paper "https://arxiv.org/abs/2301.12597" ;
            peo:website "https://huggingface.co/docs/transformers/main/model_doc/blip-2" .
 
@@ -615,63 +617,63 @@ peo:bloom rdf:type owl:Class ;
                             owl:onProperty peo:has_model_architecture ;
                             owl:someValuesFrom peo:transformer
                           ] ;
+          rdfs:comment "Large open-access language model designed to support multiple languages and dialects, aiming to make natural language processing more inclusive and accessible across diverse linguistic communities." ;
           rdfs:label "BLOOM" ;
-          peo:description "Large open-access language model designed to support multiple languages and dialects, aiming to make natural language processing more inclusive and accessible across diverse linguistic communities." ;
           peo:paper "https://arxiv.org/abs/2211.05100" ;
           peo:website "https://huggingface.co/bigscience/bloom" .
 
 
 ###  https://w3id.org/peo#capability
 peo:capability rdf:type owl:Class ;
-               rdfs:label "Capability" ;
-               peo:description "Possibile capability of large language models." .
+               rdfs:comment "Possibile capability of large language models." ;
+               rdfs:label "Capability" .
 
 
 ###  https://w3id.org/peo#chain_of_code_prompting
 peo:chain_of_code_prompting rdf:type owl:Class ;
                             rdfs:subClassOf peo:code_prompting ;
+                            rdfs:comment "Technique that enhances reasoning in language models by combining code generation with a \"LMulator\" that simulates code execution for complex tasks, enabling models to solve both algorithmic and semantic problems." ;
                             rdfs:label "Chain-of-Code prompting" ;
-                            peo:description "Technique that enhances reasoning in language models by combining code generation with a \"LMulator\" that simulates code execution for complex tasks, enabling models to solve both algorithmic and semantic problems." ;
                             peo:reference "https://arxiv.org/abs/2312.04474" .
 
 
 ###  https://w3id.org/peo#chain_of_knowledge_prompting
 peo:chain_of_knowledge_prompting rdf:type owl:Class ;
                                  rdfs:subClassOf peo:prompting_technique ;
+                                 rdfs:comment "Technique that enhances large language models by dynamically integrating factual information from heterogeneous knowledge sources, aiming to improve accuracy and reduce hallucinations in generated responses." ;
                                  rdfs:label "Chain-of-Knowledge prompting" ;
-                                 peo:description "Technique that enhances large language models by dynamically integrating factual information from heterogeneous knowledge sources, aiming to improve accuracy and reduce hallucinations in generated responses." ;
                                  peo:reference "https://arxiv.org/abs/2305.13269" .
 
 
 ###  https://w3id.org/peo#chain_of_note_prompting
 peo:chain_of_note_prompting rdf:type owl:Class ;
                             rdfs:subClassOf peo:prompting_technique ;
+                            rdfs:comment "Technique that enhances retrieval-augmented language models by generating sequential reading notes for retrieved documents, enabling systematic evaluation of relevance and reliability to produce more accurate responses." ;
                             rdfs:label "Chain-of-Note prompting" ;
-                            peo:description "Technique that enhances retrieval-augmented language models by generating sequential reading notes for retrieved documents, enabling systematic evaluation of relevance and reliability to produce more accurate responses." ;
                             peo:reference "https://arxiv.org/abs/2311.09210" .
 
 
 ###  https://w3id.org/peo#chain_of_table_prompting
 peo:chain_of_table_prompting rdf:type owl:Class ;
                              rdfs:subClassOf peo:prompting_technique ;
+                             rdfs:comment "Technique that enables large language models to perform iterative, table-based reasoning by dynamically transforming tables through a sequence of structured operations to derive accurate answers." ;
                              rdfs:label "Chain-of-Table prompting" ;
-                             peo:description "Technique that enables large language models to perform iterative, table-based reasoning by dynamically transforming tables through a sequence of structured operations to derive accurate answers." ;
                              peo:reference "https://arxiv.org/html/2401.04398v1" .
 
 
 ###  https://w3id.org/peo#chain_of_thought_prompting
 peo:chain_of_thought_prompting rdf:type owl:Class ;
                                rdfs:subClassOf peo:prompting_technique ;
+                               rdfs:comment "Prompting is a prompting technique that encourages a model to generate step-by-step reasoning or intermediate steps before arriving at a final answer." ;
                                rdfs:label "Chain-of-Thought prompting" ;
-                               peo:description "Prompting is a prompting technique that encourages a model to generate step-by-step reasoning or intermediate steps before arriving at a final answer." ;
                                peo:reference "https://arxiv.org/abs/2201.11903" .
 
 
 ###  https://w3id.org/peo#chain_of_verification_prompting
 peo:chain_of_verification_prompting rdf:type owl:Class ;
                                     rdfs:subClassOf peo:prompting_technique ;
+                                    rdfs:comment "Technique that reduces hallucinations in large language models by generating an initial response, planning and executing fact-checking questions, and producing a final verified answer." ;
                                     rdfs:label "Chain-of-Verification prompting" ;
-                                    peo:description "Technique that reduces hallucinations in large language models by generating an initial response, planning and executing fact-checking questions, and producing a final verified answer." ;
                                     peo:reference "https://arxiv.org/abs/2309.11495" .
 
 
@@ -682,8 +684,8 @@ peo:chat rdf:type owl:Class ;
                            owl:onProperty peo:uses_model ;
                            owl:someValuesFrom peo:large_language_model
                          ] ;
-         rdfs:label "Chat" ;
-         peo:description "Interactive dialogue session between a user and an AI model, involving an exchange of messages where the AI responds to user inputs based on the given prompts and context." .
+         rdfs:comment "Interactive dialogue session between a user and an AI model, involving an exchange of messages where the AI responds to user inputs based on the given prompts and context." ;
+         rdfs:label "Chat" .
 
 
 ###  https://w3id.org/peo#chinchilla
@@ -697,8 +699,8 @@ peo:chinchilla rdf:type owl:Class ;
                                  owl:onProperty peo:has_model_architecture ;
                                  owl:someValuesFrom peo:transformer
                                ] ;
+               rdfs:comment "An LLM developed by DeepMind, designed to explore efficient scaling of model size relative to data, achieving high performance with fewer parameters." ;
                rdfs:label "Chinchilla" ;
-               peo:description "An LLM developed by DeepMind, designed to explore efficient scaling of model size relative to data, achieving high performance with fewer parameters." ;
                peo:paper "https://arxiv.org/abs/2203.15556" ;
                peo:website "n.a." .
 
@@ -714,8 +716,8 @@ peo:claude rdf:type owl:Class ;
                              owl:onProperty peo:has_model_architecture ;
                              owl:someValuesFrom peo:transformer
                            ] ;
+           rdfs:comment "An AI assistant developed by Anthropic, aimed at being a safer and more controllable language model for dialogue and other NLP applications." ;
            rdfs:label "Claude" ;
-           peo:description "An AI assistant developed by Anthropic, aimed at being a safer and more controllable language model for dialogue and other NLP applications." ;
            peo:paper "n.a." ;
            peo:website "https://www.anthropic.com/claude" .
 
@@ -723,16 +725,16 @@ peo:claude rdf:type owl:Class ;
 ###  https://w3id.org/peo#clip
 peo:clip rdf:type owl:Class ;
          rdfs:subClassOf peo:base_model ;
+         rdfs:comment "CLIP (Contrastive Language–Image Pretraining) is a multimodal model that connects text and images by learning visual concepts from natural language descriptions." ;
          rdfs:label "CLIP" ;
-         peo:description "CLIP (Contrastive Language–Image Pretraining) is a multimodal model that connects text and images by learning visual concepts from natural language descriptions." ;
          peo:reference "https://arxiv.org/abs/2103.00020" .
 
 
 ###  https://w3id.org/peo#code_explanation
 peo:code_explanation rdf:type owl:Class ;
                      rdfs:subClassOf peo:code_task ;
-                     rdfs:label "Code explanation" ;
-                     peo:description "Explanation of a piece of code." .
+                     rdfs:comment "Explanation of a piece of code." ;
+                     rdfs:label "Code explanation" .
 
 
 ###  https://w3id.org/peo#code_generation
@@ -744,22 +746,22 @@ peo:code_generation rdf:type owl:Class ;
 ###  https://w3id.org/peo#code_processing
 peo:code_processing rdf:type owl:Class ;
                     rdfs:subClassOf peo:capability ;
-                    rdfs:label "Code processing" ;
-                    peo:description "Capability to process source code written in any programming language." .
+                    rdfs:comment "Capability to process source code written in any programming language." ;
+                    rdfs:label "Code processing" .
 
 
 ###  https://w3id.org/peo#code_prompting
 peo:code_prompting rdf:type owl:Class ;
                    rdfs:subClassOf peo:prompting_technique ;
-                   rdfs:label "Code prompting technque" ;
-                   peo:description "Prompting techniques to generate code" .
+                   rdfs:comment "Prompting techniques to generate code" ;
+                   rdfs:label "Code prompting technque" .
 
 
 ###  https://w3id.org/peo#code_task
 peo:code_task rdf:type owl:Class ;
               rdfs:subClassOf peo:task ;
-              rdfs:label "Code task" ;
-              peo:description "Task involving source code." .
+              rdfs:comment "Task involving source code." ;
+              rdfs:label "Code task" .
 
 
 ###  https://w3id.org/peo#cogvlm
@@ -773,8 +775,8 @@ peo:cogvlm rdf:type owl:Class ;
                              owl:onProperty peo:has_model_architecture ;
                              owl:someValuesFrom peo:vit_encoder
                            ] ;
+           rdfs:comment "Vision-language model developed to understand and generate both visual and textual information, bridging the gap between image recognition and natural language processing for more nuanced multimodal tasks." ;
            rdfs:label "CogVLM" ;
-           peo:description "Vision-language model developed to understand and generate both visual and textual information, bridging the gap between image recognition and natural language processing for more nuanced multimodal tasks." ;
            peo:paper "https://arxiv.org/abs/2312.08914" ;
            peo:website "https://github.com/THUDM/CogVLM?tab=readme-ov-file#examples" .
 
@@ -790,8 +792,8 @@ peo:command_r rdf:type owl:Class ;
                                 owl:onProperty peo:has_model_architecture ;
                                 owl:someValuesFrom peo:transformer
                               ] ;
+              rdfs:comment "Large language model with open weights optimized for a variety of use cases including reasoning, summarization, and question answering. Command-R has the capability for multilingual generation evaluated in 10 languages and highly performant RAG capabilities." ;
               rdfs:label "Command R" ;
-              peo:description "Large language model with open weights optimized for a variety of use cases including reasoning, summarization, and question answering. Command-R has the capability for multilingual generation evaluated in 10 languages and highly performant RAG capabilities." ;
               peo:paper "n.a." ;
               peo:website "https://huggingface.co/CohereForAI/c4ai-command-r-v01" .
 
@@ -799,8 +801,8 @@ peo:command_r rdf:type owl:Class ;
 ###  https://w3id.org/peo#company
 peo:company rdf:type owl:Class ;
             rdfs:subClassOf peo:organization ;
-            rdfs:label "Company" ;
-            peo:description "Organization that develops an LLM for business purpose" .
+            rdfs:comment "Organization that develops an LLM for business purpose" ;
+            rdfs:label "Company" .
 
 
 ###  https://w3id.org/peo#dall-e
@@ -822,8 +824,8 @@ peo:dall-e rdf:type owl:Class ;
                              owl:onProperty peo:has_model_architecture ;
                              owl:someValuesFrom peo:transformer
                            ] ;
+           rdfs:comment "DALL-E generates detailed images from textual descriptions, with the latest model offering enhanced prompt fidelity." ;
            rdfs:label "DALL-E" ;
-           peo:description "DALL-E generates detailed images from textual descriptions, with the latest model offering enhanced prompt fidelity." ;
            peo:paper "n.a." ;
            peo:website "https://openai.com/dall-e-3/" .
 
@@ -831,63 +833,63 @@ peo:dall-e rdf:type owl:Class ;
 ###  https://w3id.org/peo#decoder
 peo:decoder rdf:type owl:Class ;
             rdfs:subClassOf peo:base_model ;
+            rdfs:comment "Neural network architecture that generates outputs (e.g., text, images) based on input representations, typically used in sequence-to-sequence tasks, and often paired with an encoder in models like Transformer-based architectures." ;
             rdfs:label "Decoder" ;
-            peo:description "Neural network architecture that generates outputs (e.g., text, images) based on input representations, typically used in sequence-to-sequence tasks, and often paired with an encoder in models like Transformer-based architectures." ;
             peo:reference "https://medium.com/@mansoorsyed05/encoders-and-decoders-in-generative-ai-3a717d50fced" .
 
 
 ###  https://w3id.org/peo#decoder_only
 peo:decoder_only rdf:type owl:Class ;
                  rdfs:subClassOf peo:decoder ;
+                 rdfs:comment "Neural network architecture that generates outputs directly from an initial prompt or sequence without requiring a separate encoder. It processes input autoregressively, predicting the next token one step at a time, and is commonly used in large language models like GPT." ;
                  rdfs:label "Decoder only" ;
-                 peo:description "Neural network architecture that generates outputs directly from an initial prompt or sequence without requiring a separate encoder. It processes input autoregressively, predicting the next token one step at a time, and is commonly used in large language models like GPT." ;
                  peo:reference "https://cameronrwolfe.substack.com/p/decoder-only-transformers-the-workhorse" .
 
 
 ###  https://w3id.org/peo#decomposed_prompting
 peo:decomposed_prompting rdf:type owl:Class ;
                          rdfs:subClassOf peo:prompting_technique ;
+                         rdfs:comment "Modular technique that solves complex tasks by breaking them down into simpler sub-tasks, each handled by a specialized prompt or function." ;
                          rdfs:label "Decomposed prompting" ;
-                         peo:description "Modular technique that solves complex tasks by breaking them down into simpler sub-tasks, each handled by a specialized prompt or function." ;
                          peo:reference "https://arxiv.org/abs/2210.02406" .
 
 
 ###  https://w3id.org/peo#diffusion_model
 peo:diffusion_model rdf:type owl:Class ;
                     rdfs:subClassOf peo:base_model ;
+                    rdfs:comment "Generative model that learns to create data (e.g., images, audio) by reversing a gradual noise-adding process applied to the data during training, generating realistic outputs by denoising starting from random noise." ;
                     rdfs:label "Diffusion model" ;
-                    peo:description "Generative model that learns to create data (e.g., images, audio) by reversing a gradual noise-adding process applied to the data during training, generating realistic outputs by denoising starting from random noise." ;
                     peo:reference "https://en.wikipedia.org/wiki/Diffusion_model" .
 
 
 ###  https://w3id.org/peo#emotion_classification
 peo:emotion_classification rdf:type owl:Class ;
                            rdfs:subClassOf peo:text_task ;
-                           rdfs:label "Emotion classification" ;
-                           peo:description "Classification of text content." .
+                           rdfs:comment "Classification of text content." ;
+                           rdfs:label "Emotion classification" .
 
 
 ###  https://w3id.org/peo#emotion_prompting
 peo:emotion_prompting rdf:type owl:Class ;
                       rdfs:subClassOf peo:prompting_technique ;
+                      rdfs:comment "Technique that guides a model to generate responses with a specific emotional tone or to recognize and respond to the emotions within input text, enhancing empathetic or sentiment-aware interactions." ;
                       rdfs:label "Emotion prompting" ;
-                      peo:description "Technique that guides a model to generate responses with a specific emotional tone or to recognize and respond to the emotions within input text, enhancing empathetic or sentiment-aware interactions." ;
                       peo:reference "https://arxiv.org/abs/2307.11760" .
 
 
 ###  https://w3id.org/peo#encoder
 peo:encoder rdf:type owl:Class ;
             rdfs:subClassOf peo:base_model ;
+            rdfs:comment "Neural network component that processes input data (e.g., text, images, or audio) and transforms it into a dense, high-dimensional representation (latent space), capturing the most relevant features for subsequent tasks like classification, translation, or generation." ;
             rdfs:label "Encoder" ;
-            peo:description "Neural network component that processes input data (e.g., text, images, or audio) and transforms it into a dense, high-dimensional representation (latent space), capturing the most relevant features for subsequent tasks like classification, translation, or generation." ;
             peo:reference "https://medium.com/@mansoorsyed05/encoders-and-decoders-in-generative-ai-3a717d50fced" .
 
 
 ###  https://w3id.org/peo#encoder_only
 peo:encoder_only rdf:type owl:Class ;
                  rdfs:subClassOf peo:encoder ;
+                 rdfs:comment "Model that processes input data to generate a fixed-length representation or embeddings, commonly used in tasks like classification and information retrieval." ;
                  rdfs:label "Encoder only" ;
-                 peo:description "Model that processes input data to generate a fixed-length representation or embeddings, commonly used in tasks like classification and information retrieval." ;
                  peo:reference "https://medium.com/@pickleprat/encoder-only-architecture-bert-4b27f9c76860" .
 
 
@@ -902,8 +904,8 @@ peo:falcon rdf:type owl:Class ;
                              owl:onProperty peo:has_model_architecture ;
                              owl:someValuesFrom peo:decoder_only
                            ] ;
+           rdfs:comment "Falcon is a series of advanced language models aimed at text generation tasks." ;
            rdfs:label "Falcon" ;
-           peo:description "Falcon is a series of advanced language models aimed at text generation tasks." ;
            peo:paper "https://arxiv.org/abs/2311.16867" ;
            peo:website "https://falconllm.tii.ae/" .
 
@@ -911,16 +913,16 @@ peo:falcon rdf:type owl:Class ;
 ###  https://w3id.org/peo#few_shot_prompting
 peo:few_shot_prompting rdf:type owl:Class ;
                        rdfs:subClassOf peo:prompting_technique ;
+                       rdfs:comment "Technique where an AI model is provided with a few example inputs and outputs in the prompt, helping it understand the task and generate more accurate responses by leveraging these samples as context." ;
                        rdfs:label "Few shot prompting" ;
-                       peo:description "Technique where an AI model is provided with a few example inputs and outputs in the prompt, helping it understand the task and generate more accurate responses by leveraging these samples as context." ;
                        peo:reference "https://arxiv.org/abs/2005.14165" .
 
 
 ###  https://w3id.org/peo#fix_deformed_generations
 peo:fix_deformed_generations rdf:type owl:Class ;
                              rdfs:subClassOf peo:image_prompting ;
+                             rdfs:comment "Prevent deformities by using negative prompts (such as negatively weighted terms) to de-emphasize them." ;
                              rdfs:label "Fix deformed generations" ;
-                             peo:description "Prevent deformities by using negative prompts (such as negatively weighted terms) to de-emphasize them." ;
                              peo:reference "https://learnprompting.org/docs/image_prompting/fix_deformed_generations" .
 
 
@@ -935,8 +937,8 @@ peo:flan rdf:type owl:Class ;
                            owl:onProperty peo:has_model_architecture ;
                            owl:someValuesFrom peo:lamda_pt
                          ] ;
+         rdfs:comment "(Fine-tuned Language Net) A Google model that applies instruction fine-tuning to improve task performance and generalization across diverse tasks." ;
          rdfs:label "FLAN" ;
-         peo:description "(Fine-tuned Language Net) A Google model that applies instruction fine-tuning to improve task performance and generalization across diverse tasks." ;
          peo:paper "https://arxiv.org/pdf/2210.11416" ;
          peo:website "https://huggingface.co/google/flan-t5-base" .
 
@@ -972,8 +974,8 @@ peo:gemini rdf:type owl:Class ;
                              owl:onProperty peo:has_model_architecture ;
                              owl:someValuesFrom peo:transformer
                            ] ;
+           rdfs:comment "A series of LLMs by Google DeepMind, designed for conversational AI and multimodal applications" ;
            rdfs:label "Gemini" ;
-           peo:description "A series of LLMs by Google DeepMind, designed for conversational AI and multimodal applications" ;
            peo:paper "https://arxiv.org/abs/2312.11805" ;
            peo:website "https://gemini.google.com/app" .
 
@@ -989,8 +991,8 @@ peo:gemma rdf:type owl:Class ;
                             owl:onProperty peo:has_model_architecture ;
                             owl:someValuesFrom peo:transformer
                           ] ;
+          rdfs:comment "Large Language Model designed for advanced natural language processing tasks, with a focus on accuracy and contextual text generation." ;
           rdfs:label "Gemma" ;
-          peo:description "Large Language Model designed for advanced natural language processing tasks, with a focus on accuracy and contextual text generation." ;
           peo:paper "https://arxiv.org/abs/2403.08295" ;
           peo:website "https://blog.google/technology/developers/gemma-open-models/" .
 
@@ -1018,8 +1020,8 @@ peo:glamm rdf:type owl:Class ;
                             owl:onProperty peo:has_model_architecture ;
                             owl:someValuesFrom peo:region_encoder
                           ] ;
+          rdfs:comment "Multimodal model that combines language and vision, enabling pixel-level grounding, object segmentation, and interactive visual conversations" ;
           rdfs:label "GLaMM" ;
-          peo:description "Multimodal model that combines language and vision, enabling pixel-level grounding, object segmentation, and interactive visual conversations" ;
           peo:paper "https://arxiv.org/abs/2311.03356" ;
           peo:website "https://github.com/mbzuai-oryx/groundingLMM" .
 
@@ -1027,8 +1029,8 @@ peo:glamm rdf:type owl:Class ;
 ###  https://w3id.org/peo#global_image_encoder
 peo:global_image_encoder rdf:type owl:Class ;
                          rdfs:subClassOf peo:encoder ;
+                         rdfs:comment "A model that encodes an entire image into a single global feature vector, capturing the overall content and structure for tasks like classification or retrieval." ;
                          rdfs:label "Global Image Encoder" ;
-                         peo:description "A model that encodes an entire image into a single global feature vector, capturing the overall content and structure for tasks like classification or retrieval." ;
                          peo:reference "https://arxiv.org/html/2409.04095v1" .
 
 
@@ -1043,8 +1045,8 @@ peo:gpt rdf:type owl:Class ;
                           owl:onProperty peo:has_model_architecture ;
                           owl:someValuesFrom peo:decoder_only
                         ] ;
+        rdfs:comment "(Generative Pre-trained Transformer) A series of transformer models by OpenAI, with GPT-4 as the latest, excelling in NLP and conversational tasks." ;
         rdfs:label "GPT" ;
-        peo:description "(Generative Pre-trained Transformer) A series of transformer models by OpenAI, with GPT-4 as the latest, excelling in NLP and conversational tasks." ;
         peo:paper "n.a." ;
         peo:website "https://chatgpt.com/" .
 
@@ -1052,74 +1054,74 @@ peo:gpt rdf:type owl:Class ;
 ###  https://w3id.org/peo#graph_of_thought_prompting
 peo:graph_of_thought_prompting rdf:type owl:Class ;
                                rdfs:subClassOf peo:prompting_technique ;
+                               rdfs:comment "Techniques that structures prompt reasoning in a graph" ;
                                rdfs:label "Graph of Thoughts prompting" ;
-                               peo:description "Techniques that structures prompt reasoning in a graph" ;
                                peo:reference "https://arxiv.org/abs/2308.09687" .
 
 
 ###  https://w3id.org/peo#grounding_image_encoder
 peo:grounding_image_encoder rdf:type owl:Class ;
                             rdfs:subClassOf peo:encoder ;
+                            rdfs:comment "A model designed to encode images by linking specific visual elements to semantic concepts, useful for tasks like visual grounding or visual question answering." ;
                             rdfs:label "Grounding Image Encoder" ;
-                            peo:description "A model designed to encode images by linking specific visual elements to semantic concepts, useful for tasks like visual grounding or visual question answering." ;
                             peo:reference "https://arxiv.org/html/2409.08520v1" .
 
 
 ###  https://w3id.org/peo#image_explanation
 peo:image_explanation rdf:type owl:Class ;
                       rdfs:subClassOf peo:image_task ;
-                      rdfs:label "Image explanation" ;
-                      peo:description "Explanation of the content of an image." .
+                      rdfs:comment "Explanation of the content of an image." ;
+                      rdfs:label "Image explanation" .
 
 
 ###  https://w3id.org/peo#image_generation
 peo:image_generation rdf:type owl:Class ;
                      rdfs:subClassOf peo:image_task ;
-                     rdfs:label "Image generation" ;
-                     peo:description "Generation of an image starting from a text prompt." .
+                     rdfs:comment "Generation of an image starting from a text prompt." ;
+                     rdfs:label "Image generation" .
 
 
 ###  https://w3id.org/peo#image_processing
 peo:image_processing rdf:type owl:Class ;
                      rdfs:subClassOf peo:capability ;
-                     rdfs:label "Image processing" ;
-                     peo:description "Capability to process images, understanding the content of the image." .
+                     rdfs:comment "Capability to process images, understanding the content of the image." ;
+                     rdfs:label "Image processing" .
 
 
 ###  https://w3id.org/peo#image_prompting
 peo:image_prompting rdf:type owl:Class ;
                     rdfs:subClassOf peo:prompting_technique ;
+                    rdfs:comment "Prompting techniques for images" ;
                     rdfs:label "Image prompting technique" ;
-                    peo:description "Prompting techniques for images" ;
                     peo:reference "https://arxiv.org/abs/2204.13988" .
 
 
 ###  https://w3id.org/peo#image_segmentation
 peo:image_segmentation rdf:type owl:Class ;
                        rdfs:subClassOf peo:image_task ;
-                       rdfs:label "Image segmentation" ;
-                       peo:description "Segmentation of image elements." .
+                       rdfs:comment "Segmentation of image elements." ;
+                       rdfs:label "Image segmentation" .
 
 
 ###  https://w3id.org/peo#image_task
 peo:image_task rdf:type owl:Class ;
                rdfs:subClassOf peo:task ;
-               rdfs:label "Image task" ;
-               peo:description "Task involving images." .
+               rdfs:comment "Task involving images." ;
+               rdfs:label "Image task" .
 
 
 ###  https://w3id.org/peo#lamda_pt
 peo:lamda_pt rdf:type owl:Class ;
              rdfs:subClassOf peo:transformer ;
+             rdfs:comment "Pre-trained conversational AI model by Google designed for open-domain, context-aware, and natural dialogue generation." ;
              rdfs:label "LAMDA PT" ;
-             peo:description "Pre-trained conversational AI model by Google designed for open-domain, context-aware, and natural dialogue generation." ;
              peo:reference "https://arxiv.org/abs/2201.08239" .
 
 
 ###  https://w3id.org/peo#large_language_model
 peo:large_language_model rdf:type owl:Class ;
+                         rdfs:comment "Type of computational model designed for natural language processing tasks such as language generation." ;
                          rdfs:label "Large Language Model" ;
-                         peo:description "Type of computational model designed for natural language processing tasks such as language generation." ;
                          peo:reference "https://en.wikipedia.org/wiki/Large_language_model" .
 
 
@@ -1130,23 +1132,23 @@ peo:large_language_model_characteristic rdf:type owl:Class ;
                                                                                  ) ;
                                                               rdf:type owl:Class
                                                             ] ;
-                                        rdfs:label "LLM chracteristic" ;
-                                        peo:description "The class represents the defining traits of a large language model, combining its base model attributes and capabilities." .
+                                        rdfs:comment "The class represents the defining traits of a large language model, combining its base model attributes and capabilities." ;
+                                        rdfs:label "LLM chracteristic" .
 
 
 ###  https://w3id.org/peo#least_to_most_prompting
 peo:least_to_most_prompting rdf:type owl:Class ;
                             rdfs:subClassOf peo:prompting_technique ;
+                            rdfs:comment "Technique that involves breaking down complex tasks into simpler subproblems, solving each sequentially to leverage previous answers for better generalization on challenging tasks." ;
                             rdfs:label "Least-to-most prompting" ;
-                            peo:description "Technique that involves breaking down complex tasks into simpler subproblems, solving each sequentially to leverage previous answers for better generalization on challenging tasks." ;
                             peo:reference "https://arxiv.org/abs/2205.10625" .
 
 
 ###  https://w3id.org/peo#lighting
 peo:lighting rdf:type owl:Class ;
              rdfs:subClassOf peo:image_prompting ;
+             rdfs:comment "Words that describe the lighting of the object to generate" ;
              rdfs:label "Lighting" ;
-             peo:description "Words that describe the lighting of the object to generate" ;
              peo:reference "https://arxiv.org/abs/2211.15462" .
 
 
@@ -1161,8 +1163,8 @@ peo:llama rdf:type owl:Class ;
                             owl:onProperty peo:has_model_architecture ;
                             owl:someValuesFrom peo:transformer
                           ] ;
+          rdfs:comment "(Large Language Model Meta AI) A series of open-source models by Meta, designed to be efficient for research and commercial use." ;
           rdfs:label "LLaMA" ;
-          peo:description "(Large Language Model Meta AI) A series of open-source models by Meta, designed to be efficient for research and commercial use." ;
           peo:paper "https://arxiv.org/abs/2302.13971" ;
           peo:website "https://huggingface.co/docs/transformers/main/model_doc/llama" .
 
@@ -1170,16 +1172,16 @@ peo:llama rdf:type owl:Class ;
 ###  https://w3id.org/peo#logical_chain_of_thought_prompting
 peo:logical_chain_of_thought_prompting rdf:type owl:Class ;
                                        rdfs:subClassOf peo:prompting_technique ;
+                                       rdfs:comment "Technique that enhances language models' logical reasoning skills by using a structured dataset of chain-of-thought (CoT) instructions, allowing models to perform step-by-step reasoning based on logical premises and inference rule" ;
                                        rdfs:label "Logical Chain-of-Thought prompting" ;
-                                       peo:description "Technique that enhances language models' logical reasoning skills by using a structured dataset of chain-of-thought (CoT) instructions, allowing models to perform step-by-step reasoning based on logical premises and inference rule" ;
                                        peo:reference "https://arxiv.org/abs/2305.12147" .
 
 
 ###  https://w3id.org/peo#mathematical_understanding
 peo:mathematical_understanding rdf:type owl:Class ;
                                rdfs:subClassOf peo:text_task ;
-                               rdfs:label "Mathematical understanding" ;
-                               peo:description "Solving of mathematical formulas and problems." .
+                               rdfs:comment "Solving of mathematical formulas and problems." ;
+                               rdfs:label "Mathematical understanding" .
 
 
 ###  https://w3id.org/peo#midjourney
@@ -1193,8 +1195,8 @@ peo:midjourney rdf:type owl:Class ;
                                  owl:onProperty peo:has_model_architecture ;
                                  owl:someValuesFrom peo:diffusion_model
                                ] ;
+               rdfs:comment "Midjourney is an AI tool that generates images based on text prompts with artistic and realistic quality." ;
                rdfs:label "Midjourney" ;
-               peo:description "Midjourney is an AI tool that generates images based on text prompts with artistic and realistic quality." ;
                peo:website "https://www.midjourney.com/" .
 
 
@@ -1209,8 +1211,8 @@ peo:minerva rdf:type owl:Class ;
                               owl:onProperty peo:has_model_architecture ;
                               owl:someValuesFrom peo:transformer
                             ] ;
+            rdfs:comment "Family of large language models developed by Sapienza University, trained on extensive Italian and English corpora to support diverse applications like text generation and natural language understanding." ;
             rdfs:label "Minerva" ;
-            peo:description "Family of large language models developed by Sapienza University, trained on extensive Italian and English corpora to support diverse applications like text generation and natural language understanding." ;
             peo:paper "n.a." ;
             peo:website "https://nlp.uniroma1.it/minerva/" .
 
@@ -1226,8 +1228,8 @@ peo:mistral rdf:type owl:Class ;
                               owl:onProperty peo:has_model_architecture ;
                               owl:someValuesFrom peo:transformer
                             ] ;
+            rdfs:comment "A language model focused on being efficient and high-performing, aiming to improve NLP capabilities with fewer resources." ;
             rdfs:label "Mistral" ;
-            peo:description "A language model focused on being efficient and high-performing, aiming to improve NLP capabilities with fewer resources." ;
             peo:paper "https://arxiv.org/abs/2310.06825" ;
             peo:website "https://chat.mistral.ai/chat" .
 
@@ -1243,8 +1245,8 @@ peo:mpt-7b rdf:type owl:Class ;
                              owl:onProperty peo:has_model_architecture ;
                              owl:someValuesFrom peo:decoder_only
                            ] ;
+           rdfs:comment "Decoder-style transformer with 6.7B parameters" ;
            rdfs:label "MPT-7B" ;
-           peo:description "Decoder-style transformer with 6.7B parameters" ;
            peo:paper "n.a." ;
            peo:website "https://www.databricks.com/blog/mpt-7b" .
 
@@ -1260,8 +1262,8 @@ peo:olmo rdf:type owl:Class ;
                            owl:onProperty peo:has_model_architecture ;
                            owl:someValuesFrom peo:decoder_only
                          ] ;
+         rdfs:comment "Open-source language model that aimes to provide a transparent, publicly accessible alternative to proprietary LLMs for research and applications in natural language processing." ;
          rdfs:label "OLMo" ;
-         peo:description "Open-source language model that aimes to provide a transparent, publicly accessible alternative to proprietary LLMs for research and applications in natural language processing." ;
          peo:paper "https://arxiv.org/abs/2402.00838" ;
          peo:website "https://allenai.org/olmo" .
 
@@ -1277,8 +1279,8 @@ peo:openelm rdf:type owl:Class ;
                               owl:onProperty peo:has_model_architecture ;
                               owl:someValuesFrom peo:decoder_only
                             ] ;
+            rdfs:comment "An open-source initiative focused on evolutionary learning and modeling, particularly in the context of NLP tasks." ;
             rdfs:label "OpenELM" ;
-            peo:description "An open-source initiative focused on evolutionary learning and modeling, particularly in the context of NLP tasks." ;
             peo:paper "https://arxiv.org/abs/2404.14619" ;
             peo:website "https://huggingface.co/apple/OpenELM" .
 
@@ -1294,16 +1296,16 @@ peo:opt rdf:type owl:Class ;
                           owl:onProperty peo:has_model_architecture ;
                           owl:someValuesFrom peo:transformer
                         ] ;
+        rdfs:comment "(Open Pretrained Transformer) A model developed by Meta, openly released to provide researchers with access to LLMs for a variety of applications." ;
         rdfs:label "OPT" ;
-        peo:description "(Open Pretrained Transformer) A model developed by Meta, openly released to provide researchers with access to LLMs for a variety of applications." ;
         peo:paper "https://arxiv.org/abs/2205.01068" ;
         peo:website "https://huggingface.co/facebook/opt-1.3b" .
 
 
 ###  https://w3id.org/peo#organization
 peo:organization rdf:type owl:Class ;
-                 rdfs:label "Organization" ;
-                 peo:description "An organization of people that develops a large language model" .
+                 rdfs:comment "An organization of people that develops a large language model" ;
+                 rdfs:label "Organization" .
 
 
 ###  https://w3id.org/peo#palm
@@ -1321,8 +1323,8 @@ peo:palm rdf:type owl:Class ;
                            owl:onProperty peo:has_model_architecture ;
                            owl:someValuesFrom peo:transformer
                          ] ;
+         rdfs:comment "Large language model developed by Google, designed to perform a range of NLP tasks with high accuracy across languages, reasoning, and even code generation." ;
          rdfs:label "PaLM" ;
-         peo:description "Large language model developed by Google, designed to perform a range of NLP tasks with high accuracy across languages, reasoning, and even code generation." ;
          peo:paper "https://arxiv.org/abs/2204.02311" ;
          peo:website "https://ai.google/discover/palm2/" .
 
@@ -1338,8 +1340,8 @@ peo:phi-1 rdf:type owl:Class ;
                             owl:onProperty peo:has_model_architecture ;
                             owl:someValuesFrom peo:transformer
                           ] ;
+          rdfs:comment "A recently developed AI model by a specific organization or team, likely aimed at enhancing certain NLP or conversational AI capabilities (additional details may be required as it's a newer name)." ;
           rdfs:label "Phi-1" ;
-          peo:description "A recently developed AI model by a specific organization or team, likely aimed at enhancing certain NLP or conversational AI capabilities (additional details may be required as it's a newer name)." ;
           peo:paper "https://arxiv.org/abs/2306.11644" ;
           peo:website "n.a." .
 
@@ -1347,137 +1349,137 @@ peo:phi-1 rdf:type owl:Class ;
 ###  https://w3id.org/peo#pixel_decoder
 peo:pixel_decoder rdf:type owl:Class ;
                   rdfs:subClassOf peo:decoder ;
+                  rdfs:comment "Neural network module used in computer vision tasks to refine and upsample low-resolution feature maps into high-resolution outputs, typically representing pixel-level predictions such as segmentation masks or image reconstruction." ;
                   rdfs:label "Pixel decoder" ;
-                  peo:description "Neural network module used in computer vision tasks to refine and upsample low-resolution feature maps into high-resolution outputs, typically representing pixel-level predictions such as segmentation masks or image reconstruction." ;
                   peo:reference "https://arxiv.org/abs/2212.11270" .
 
 
 ###  https://w3id.org/peo#plan_and_solve_prompting
 peo:plan_and_solve_prompting rdf:type owl:Class ;
                              rdfs:subClassOf peo:prompting_technique ;
+                             rdfs:comment "Technique that guides large language models to first devise a plan that breaks down a complex task into subtasks, then execute the plan step-by-step for improved reasoning accuracy." ;
                              rdfs:label "Plan-and-Solve prompting" ;
-                             peo:description "Technique that guides large language models to first devise a plan that breaks down a complex task into subtasks, then execute the plan step-by-step for improved reasoning accuracy." ;
                              peo:reference "https://arxiv.org/abs/2305.04091" .
 
 
 ###  https://w3id.org/peo#program_of_thoughts_prompting
 peo:program_of_thoughts_prompting rdf:type owl:Class ;
                                   rdfs:subClassOf peo:code_prompting ;
+                                  rdfs:comment "Technique where the model follows structured, programmatic steps or logical rules within the prompt to solve complex tasks, similar to a pseudo-code or algorithmic approach." ;
                                   rdfs:label "Program of Thoughts prompting" ;
-                                  peo:description "Technique where the model follows structured, programmatic steps or logical rules within the prompt to solve complex tasks, similar to a pseudo-code or algorithmic approach." ;
                                   peo:reference "https://arxiv.org/abs/2211.12588" .
 
 
 ###  https://w3id.org/peo#prompt
 peo:prompt rdf:type owl:Class ;
            rdfs:subClassOf peo:prompt_engineering ;
-           rdfs:label "Prompt" ;
-           peo:description "Input to a large language model." .
+           rdfs:comment "Input to a large language model." ;
+           rdfs:label "Prompt" .
 
 
 ###  https://w3id.org/peo#prompt_engineering
 peo:prompt_engineering rdf:type owl:Class ;
-                       rdfs:label "Prompt engineering" ;
-                       peo:description "Practice of crafting and optimizing input prompts to guide AI models, particularly large language models, to produce desired outputs. It involves understanding the model's behavior and leveraging techniques like few-shot learning, zero-shot prompting, or specific formatting to achieve accurate, relevant, and context-aware results for various tasks." .
+                       rdfs:comment "Practice of crafting and optimizing input prompts to guide AI models, particularly large language models, to produce desired outputs. It involves understanding the model's behavior and leveraging techniques like few-shot learning, zero-shot prompting, or specific formatting to achieve accurate, relevant, and context-aware results for various tasks." ;
+                       rdfs:label "Prompt engineering" .
 
 
 ###  https://w3id.org/peo#prompting_technique
 peo:prompting_technique rdf:type owl:Class ;
                         rdfs:subClassOf peo:prompt_engineering ;
-                        rdfs:label "Prompting technique" ;
-                        peo:description "Structured approach or method used to design prompts for interacting with AI models, aimed at optimizing their responses for specific tasks or objectives." .
+                        rdfs:comment "Structured approach or method used to design prompts for interacting with AI models, aimed at optimizing their responses for specific tasks or objectives." ;
+                        rdfs:label "Prompting technique" .
 
 
 ###  https://w3id.org/peo#q_former
 peo:q_former rdf:type owl:Class ;
              rdfs:subClassOf peo:transformer ;
+             rdfs:comment "A transformer-based model that uses query embeddings to encode specific features or focus areas in cross-modal or task-specific applications." ;
              rdfs:label "Q-Former" ;
-             peo:description "A transformer-based model that uses query embeddings to encode specific features or focus areas in cross-modal or task-specific applications." ;
              peo:reference "https://abdulkaderhelwan.medium.com/q-former-1d83163975da" .
 
 
 ###  https://w3id.org/peo#quality_boosters
 peo:quality_boosters rdf:type owl:Class ;
                      rdfs:subClassOf peo:image_prompting ;
+                     rdfs:comment "Terms that enhance style-agnostic attributes, such as detail and resolution, in AI-generated images." ;
                      rdfs:label "Quality boosters" ;
-                     peo:description "Terms that enhance style-agnostic attributes, such as detail and resolution, in AI-generated images." ;
                      peo:reference "https://arxiv.org/abs/2204.13988" .
 
 
 ###  https://w3id.org/peo#question_answering
 peo:question_answering rdf:type owl:Class ;
                        rdfs:subClassOf peo:text_task ;
-                       rdfs:label "Question-answering" ;
-                       peo:description "Task of generate answwers from a series of answwers." .
+                       rdfs:comment "Task of generate answwers from a series of answwers." ;
+                       rdfs:label "Question-answering" .
 
 
 ###  https://w3id.org/peo#rag_prompting
 peo:rag_prompting rdf:type owl:Class ;
                   rdfs:subClassOf peo:prompting_technique ;
+                  rdfs:comment "Technique that combines retrieval of relevant external information with generative responses, enabling a model to access and integrate factual or context-specific data dynamically to produce more informed and accurate outputs." ;
                   rdfs:label "Retrieval Augmented Generation - RAG prompting" ;
-                  peo:description "Technique that combines retrieval of relevant external information with generative responses, enabling a model to access and integrate factual or context-specific data dynamically to produce more informed and accurate outputs." ;
                   peo:reference "https://arxiv.org/pdf/2005.11401" .
 
 
 ###  https://w3id.org/peo#react_prompting
 peo:react_prompting rdf:type owl:Class ;
                     rdfs:subClassOf peo:prompting_technique ;
+                    rdfs:comment "Technique where an AI model is guided to reason and act iteratively, encouraging it to think step-by-step while interweaving reasoning and actions to handle complex tasks more effectively." ;
                     rdfs:label "ReAct prompting" ;
-                    peo:description "Technique where an AI model is guided to reason and act iteratively, encouraging it to think step-by-step while interweaving reasoning and actions to handle complex tasks more effectively." ;
                     peo:reference "https://arxiv.org/abs/2210.03629" .
 
 
 ###  https://w3id.org/peo#recurrent_neural_network
 peo:recurrent_neural_network rdf:type owl:Class ;
                              rdfs:subClassOf peo:base_model ;
+                             rdfs:comment "A sequential model that processes input data one step at a time while maintaining a memory of past inputs via hidden states, suitable for time-series and sequential tasks." ;
                              rdfs:label "Recurrent Neural Network" ;
-                             peo:description "A sequential model that processes input data one step at a time while maintaining a memory of past inputs via hidden states, suitable for time-series and sequential tasks." ;
                              peo:reference "https://en.wikipedia.org/wiki/Recurrent_neural_network" .
 
 
 ###  https://w3id.org/peo#region_encoder
 peo:region_encoder rdf:type owl:Class ;
                    rdfs:subClassOf peo:encoder ;
+                   rdfs:comment "A model that focuses on extracting feature representations from specific regions within an image, often used in object detection or region-based vision tasks." ;
                    rdfs:label "Region Encoder" ;
-                   peo:description "A model that focuses on extracting feature representations from specific regions within an image, often used in object detection or region-based vision tasks." ;
                    peo:reference "https://arxiv.org/html/2306.05411v2" .
 
 
 ###  https://w3id.org/peo#repetition
 peo:repetition rdf:type owl:Class ;
                rdfs:subClassOf peo:image_prompting ;
+               rdfs:comment "Repeating the same word in a image prompt in order to augment some aspects" ;
                rdfs:label "Repetition" ;
-               peo:description "Repeating the same word in a image prompt in order to augment some aspects" ;
                peo:reference "https://arxiv.org/abs/2204.13988" .
 
 
 ###  https://w3id.org/peo#rephrase_and_respond_prompting
 peo:rephrase_and_respond_prompting rdf:type owl:Class ;
                                    rdfs:subClassOf peo:prompting_technique ;
+                                   rdfs:comment "Technique that allows an LLM to rephrase a user's question for clarity before responding, improving accuracy and reducing ambiguities." ;
                                    rdfs:label "Rephrase and Respond prompting" ;
-                                   peo:description "Technique that allows an LLM to rephrase a user's question for clarity before responding, improving accuracy and reducing ambiguities." ;
                                    peo:reference "https://arxiv.org/abs/2311.04205" .
 
 
 ###  https://w3id.org/peo#research_institution
 peo:research_institution rdf:type owl:Class ;
                          rdfs:subClassOf peo:organization ;
-                         rdfs:label "Research institution" ;
-                         peo:description "Institution of researchers and developers who develop a LLM  for research purposes." .
+                         rdfs:comment "Institution of researchers and developers who develop a LLM  for research purposes." ;
+                         rdfs:label "Research institution" .
 
 
 ###  https://w3id.org/peo#response
 peo:response rdf:type owl:Class ;
              rdfs:subClassOf peo:prompt_engineering ;
-             rdfs:label "Response" ;
-             peo:description "Response given by a large language model." .
+             rdfs:comment "Response given by a large language model." ;
+             rdfs:label "Response" .
 
 
 ###  https://w3id.org/peo#role_prompting
 peo:role_prompting rdf:type owl:Class ;
                    rdfs:subClassOf peo:prompting_technique ;
+                   rdfs:comment "Technique that involves giving the model a specific role to play, such as a helpful assistant or a knowledgeable expert" ;
                    rdfs:label "Role prompting" ;
-                   peo:description "Technique that involves giving the model a specific role to play, such as a helpful assistant or a knowledgeable expert" ;
                    peo:reference "https://learnprompting.org/docs/basics/roles?srsltid=AfmBOorOhcs91R9q-XT0yNLiN8nzLnDBonoztR-HX-iB9M4jk3nvadQo#user-content-fnref-1" .
 
 
@@ -1496,8 +1498,8 @@ peo:rwkv_llm rdf:type owl:Class ;
                                owl:onProperty peo:has_model_architecture ;
                                owl:someValuesFrom peo:transformer
                              ] ;
+             rdfs:comment "Large language model that integrates transformer and RNN principles to efficiently manage long-context sequences, supporting improved language understanding and generation over extensive text inputs." ;
              rdfs:label "RWKV LLM" ;
-             peo:description "Large language model that integrates transformer and RNN principles to efficiently manage long-context sequences, supporting improved language understanding and generation over extensive text inputs." ;
              peo:paper "https://arxiv.org/abs/2305.13048" ;
              peo:website "https://github.com/BlinkDL/RWKV-LM" .
 
@@ -1505,24 +1507,24 @@ peo:rwkv_llm rdf:type owl:Class ;
 ###  https://w3id.org/peo#scratchpad_prompting
 peo:scratchpad_prompting rdf:type owl:Class ;
                          rdfs:subClassOf peo:code_prompting ;
+                         rdfs:comment "Technique where language models are guided to output intermediate computational steps—stored in a \"scratchpad\"—to solve complex, multi-step tasks, improving their accuracy and reasoning capabilities by breaking down problems step-by-step" ;
                          rdfs:label "Scratchpad prompting" ;
-                         peo:description "Technique where language models are guided to output intermediate computational steps—stored in a \"scratchpad\"—to solve complex, multi-step tasks, improving their accuracy and reasoning capabilities by breaking down problems step-by-step" ;
                          peo:reference "https://arxiv.org/abs/2112.00114" .
 
 
 ###  https://w3id.org/peo#self_consistency_prompting
 peo:self_consistency_prompting rdf:type owl:Class ;
                                rdfs:subClassOf peo:prompting_technique ;
+                               rdfs:comment "Technique where multiple reasoning paths or answers are generated by a model, and the final response is selected based on the most frequently occurring or consistent result, enhancing reliability and accuracy in complex problem-solving tasks." ;
                                rdfs:label "Self consistency prompting" ;
-                               peo:description "Technique where multiple reasoning paths or answers are generated by a model, and the final response is selected based on the most frequently occurring or consistent result, enhancing reliability and accuracy in complex problem-solving tasks." ;
                                peo:reference "https://arxiv.org/abs/2203.11171" .
 
 
 ###  https://w3id.org/peo#shot_type
 peo:shot_type rdf:type owl:Class ;
               rdfs:subClassOf peo:image_prompting ;
+              rdfs:comment "Technique that incorporates various camera effects" ;
               rdfs:label "Shot type" ;
-              peo:description "Technique that incorporates various camera effects" ;
               peo:reference "https://learnprompting.org/docs/image_prompting/shot_type" .
 
 
@@ -1537,8 +1539,8 @@ peo:sora rdf:type owl:Class ;
                            owl:onProperty peo:has_model_architecture ;
                            owl:someValuesFrom peo:decoder_only
                          ] ;
+         rdfs:comment "Text-to-video AI model. Sora can create videos of up to a minute of realistic and imaginative scenes given text instructions." ;
          rdfs:label "Sora" ;
-         peo:description "Text-to-video AI model. Sora can create videos of up to a minute of realistic and imaginative scenes given text instructions." ;
          peo:paper "n.a." ;
          peo:website "https://openai.com/index/sora/" .
 
@@ -1554,8 +1556,8 @@ peo:stablelm rdf:type owl:Class ;
                                owl:onProperty peo:has_model_architecture ;
                                owl:someValuesFrom peo:decoder_only
                              ] ;
+             rdfs:comment "Open source large language model designed to support a range of natural language processing tasks with a focus on accessibility and transparency in model deployment and fine-tuning." ;
              rdfs:label "StableLM" ;
-             peo:description "Open source large language model designed to support a range of natural language processing tasks with a focus on accessibility and transparency in model deployment and fine-tuning." ;
              peo:paper "https://arxiv.org/abs/2402.17834" ;
              peo:website "https://huggingface.co/stabilityai/stablelm-base-alpha-7b" .
 
@@ -1571,8 +1573,8 @@ peo:starcoder rdf:type owl:Class ;
                                 owl:onProperty peo:has_model_architecture ;
                                 owl:someValuesFrom peo:decoder_only
                               ] ;
+              rdfs:comment "Large language model specialized for code generation and understanding designed to support multiple programming languages and assist developers in writing, debugging, and understanding code." ;
               rdfs:label "StarCoder" ;
-              peo:description "Large language model specialized for code generation and understanding designed to support multiple programming languages and assist developers in writing, debugging, and understanding code." ;
               peo:paper "https://arxiv.org/abs/2305.06161" ;
               peo:website "https://huggingface.co/bigcode/starcoder" .
 
@@ -1580,24 +1582,24 @@ peo:starcoder rdf:type owl:Class ;
 ###  https://w3id.org/peo#structured_cot_prompting
 peo:structured_cot_prompting rdf:type owl:Class ;
                              rdfs:subClassOf peo:code_prompting ;
+                             rdfs:comment "Technique for code generation that guides language models to use structured programming steps-sequence, branch, and loop-to improve accuracy and code quality." ;
                              rdfs:label "Structured Chain-of-Thought prompting" ;
-                             peo:description "Technique for code generation that guides language models to use structured programming steps-sequence, branch, and loop-to improve accuracy and code quality." ;
                              peo:reference "https://arxiv.org/abs/2305.06599" .
 
 
 ###  https://w3id.org/peo#style_modifiers
 peo:style_modifiers rdf:type owl:Class ;
                     rdfs:subClassOf peo:image_prompting ;
+                    rdfs:comment "Descriptors that consistently produce certain styles" ;
                     rdfs:label "Style modifiers" ;
-                    peo:description "Descriptors that consistently produce certain styles" ;
                     peo:reference "https://arxiv.org/abs/2204.13988" .
 
 
 ###  https://w3id.org/peo#system_2_attention_prompting
 peo:system_2_attention_prompting rdf:type owl:Class ;
                                  rdfs:subClassOf peo:prompting_technique ;
+                                 rdfs:comment "Technique that enables large language models (LLMs) to focus only on relevant parts of the input context by regenerating it to exclude distracting or biased information, thereby improving the factual accuracy and objectivity of the model's responses." ;
                                  rdfs:label "System-2-Attention prompting" ;
-                                 peo:description "Technique that enables large language models (LLMs) to focus only on relevant parts of the input context by regenerating it to exclude distracting or biased information, thereby improving the factual accuracy and objectivity of the model's responses." ;
                                  peo:reference "https://arxiv.org/abs/2311.11829" .
 
 
@@ -1612,8 +1614,8 @@ peo:t5 rdf:type owl:Class ;
                          owl:onProperty peo:has_model_architecture ;
                          owl:someValuesFrom peo:transformer
                        ] ;
+       rdfs:comment "(Text-To-Text Transfer Transformer) A Google model where every NLP task is cast as a text-to-text problem, known for its adaptability across diverse tasks." ;
        rdfs:label "T5" ;
-       peo:description "(Text-To-Text Transfer Transformer) A Google model where every NLP task is cast as a text-to-text problem, known for its adaptability across diverse tasks." ;
        peo:paper "https://jmlr.org/papers/volume21/20-074/20-074.pdf" ;
        peo:website "https://huggingface.co/t5-base" .
 
@@ -1621,96 +1623,96 @@ peo:t5 rdf:type owl:Class ;
 ###  https://w3id.org/peo#take_step_back_prompting
 peo:take_step_back_prompting rdf:type owl:Class ;
                              rdfs:subClassOf peo:prompting_technique ;
+                             rdfs:comment "Technique that enhances reasoning in large language models by prompting them to abstract high-level concepts from specific details to guide problem-solving." ;
                              rdfs:label "Take a step back prompting" ;
-                             peo:description "Technique that enhances reasoning in large language models by prompting them to abstract high-level concepts from specific details to guide problem-solving." ;
                              peo:reference "https://arxiv.org/abs/2310.06117" .
 
 
 ###  https://w3id.org/peo#task
 peo:task rdf:type owl:Class ;
-         rdfs:label "Task" ;
-         peo:description "Task that has to be exxecuted by a large language model." .
+         rdfs:comment "Task that has to be exxecuted by a large language model." ;
+         rdfs:label "Task" .
 
 
 ###  https://w3id.org/peo#text_explanation
 peo:text_explanation rdf:type owl:Class ;
                      rdfs:subClassOf peo:text_task ;
-                     rdfs:label "Text explanation" ;
-                     peo:description "Explanation of the content of a text" .
+                     rdfs:comment "Explanation of the content of a text" ;
+                     rdfs:label "Text explanation" .
 
 
 ###  https://w3id.org/peo#text_generation
 peo:text_generation rdf:type owl:Class ;
                     rdfs:subClassOf peo:text_task ;
-                    rdfs:label "Text generation" ;
-                    peo:description "Generation of text starting from a prompt." .
+                    rdfs:comment "Generation of text starting from a prompt." ;
+                    rdfs:label "Text generation" .
 
 
 ###  https://w3id.org/peo#text_processing
 peo:text_processing rdf:type owl:Class ;
                     rdfs:subClassOf peo:capability ;
-                    rdfs:label "Text processing" ;
-                    peo:description "Capability to process text and documents with text inside." .
+                    rdfs:comment "Capability to process text and documents with text inside." ;
+                    rdfs:label "Text processing" .
 
 
 ###  https://w3id.org/peo#text_summarization
 peo:text_summarization rdf:type owl:Class ;
                        rdfs:subClassOf peo:text_task ;
-                       rdfs:label "Text summarization" ;
-                       peo:description "Summarization of text starting from a prompt." .
+                       rdfs:comment "Summarization of text starting from a prompt." ;
+                       rdfs:label "Text summarization" .
 
 
 ###  https://w3id.org/peo#text_task
 peo:text_task rdf:type owl:Class ;
               rdfs:subClassOf peo:task ;
-              rdfs:label "Text task" ;
-              peo:description "Task involving text." .
+              rdfs:comment "Task involving text." ;
+              rdfs:label "Text task" .
 
 
 ###  https://w3id.org/peo#text_translation
 peo:text_translation rdf:type owl:Class ;
                      rdfs:subClassOf peo:text_task ;
-                     rdfs:label "Text translation" ;
-                     peo:description "Translation of a text from a language to another." .
+                     rdfs:comment "Translation of a text from a language to another." ;
+                     rdfs:label "Text translation" .
 
 
 ###  https://w3id.org/peo#thread_of_thought_prompting
 peo:thread_of_thought_prompting rdf:type owl:Class ;
                                 rdfs:subClassOf peo:prompting_technique ;
+                                rdfs:comment "Technique where a model maintains a cohesive line of reasoning across multiple prompts or turns, allowing it to build on previous responses and sustain continuity in complex, multi-step tasks or dialogues." ;
                                 rdfs:label "Thread of thought prompting" ;
-                                peo:description "Technique where a model maintains a cohesive line of reasoning across multiple prompts or turns, allowing it to build on previous responses and sustain continuity in complex, multi-step tasks or dialogues." ;
                                 peo:reference "https://arxiv.org/abs/2311.08734" .
 
 
 ###  https://w3id.org/peo#transformer
 peo:transformer rdf:type owl:Class ;
                 rdfs:subClassOf peo:base_model ;
+                rdfs:comment "A neural network architecture that uses self-attention mechanisms to process sequential data in parallel, effectively capturing long-range dependencies" ;
                 rdfs:label "Transformer" ;
-                peo:description "A neural network architecture that uses self-attention mechanisms to process sequential data in parallel, effectively capturing long-range dependencies" ;
                 peo:reference "https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)" .
 
 
 ###  https://w3id.org/peo#transformer_xl
 peo:transformer_xl rdf:type owl:Class ;
                    rdfs:subClassOf peo:transformer ;
+                   rdfs:comment "Variant of the Transformer model designed to handle longer sequences by introducing segment-level recurrence and relative positional embeddings, enabling better context retention and improved efficiency in language modeling tasks" ;
                    rdfs:label "Transformer XL" ;
-                   peo:description "Variant of the Transformer model designed to handle longer sequences by introducing segment-level recurrence and relative positional embeddings, enabling better context retention and improved efficiency in language modeling tasks" ;
                    peo:reference "https://arxiv.org/abs/1901.02860" .
 
 
 ###  https://w3id.org/peo#tree_of_thoughts_prompting
 peo:tree_of_thoughts_prompting rdf:type owl:Class ;
                                rdfs:subClassOf peo:prompting_technique ;
+                               rdfs:comment "Technique that involves breaking down complex problems into a structured tree of decisions, allowing an AI model to explore multiple reasoning paths to reach an optimal solution." ;
                                rdfs:label "Tree of Thoughts prompting" ;
-                               peo:description "Technique that involves breaking down complex problems into a structured tree of decisions, allowing an AI model to explore multiple reasoning paths to reach an optimal solution." ;
                                peo:reference "https://arxiv.org/abs/2305.10601" .
 
 
 ###  https://w3id.org/peo#university
 peo:university rdf:type owl:Class ;
                rdfs:subClassOf peo:organization ;
-               rdfs:label "University" ;
-               peo:description "A higher education institution dedicated to advanced learning, research, and the development of specialized knowledge and skills" .
+               rdfs:comment "A higher education institution dedicated to advanced learning, research, and the development of specialized knowledge and skills" ;
+               rdfs:label "University" .
 
 
 ###  https://w3id.org/peo#vall-e
@@ -1724,8 +1726,8 @@ peo:vall-e rdf:type owl:Class ;
                              owl:onProperty peo:has_model_architecture ;
                              owl:someValuesFrom peo:transformer
                            ] ;
+           rdfs:comment "VALL-E is a text-to-speech model that synthesizes high-quality speech from text input." ;
            rdfs:label "VALL-E" ;
-           peo:description "VALL-E is a text-to-speech model that synthesizes high-quality speech from text input." ;
            peo:paper "n.a." ;
            peo:website "https://www.microsoft.com/en-us/research/project/vall-e-x/vall-e-r/" .
 
@@ -1741,8 +1743,8 @@ peo:vicuna rdf:type owl:Class ;
                              owl:onProperty peo:has_model_architecture ;
                              owl:someValuesFrom peo:transformer
                            ] ;
+           rdfs:comment "Open-source conversational model that provides a high-quality chatbot experience." ;
            rdfs:label "Vicuna" ;
-           peo:description "Open-source conversational model that provides a high-quality chatbot experience." ;
            peo:paper "n.a." ;
            peo:website "https://vicuna.lmsys.org/" .
 
@@ -1750,36 +1752,36 @@ peo:vicuna rdf:type owl:Class ;
 ###  https://w3id.org/peo#video_explanation
 peo:video_explanation rdf:type owl:Class ;
                       rdfs:subClassOf peo:video_task ;
-                      rdfs:label "Video explanation" ;
-                      peo:description "Explanation of the content of a video." .
+                      rdfs:comment "Explanation of the content of a video." ;
+                      rdfs:label "Video explanation" .
 
 
 ###  https://w3id.org/peo#video_generation
 peo:video_generation rdf:type owl:Class ;
                      rdfs:subClassOf peo:video_task ;
-                     rdfs:label "Video generation" ;
-                     peo:description "Generation of a video starting from a text prompt." .
+                     rdfs:comment "Generation of a video starting from a text prompt." ;
+                     rdfs:label "Video generation" .
 
 
 ###  https://w3id.org/peo#video_processing
 peo:video_processing rdf:type owl:Class ;
                      rdfs:subClassOf peo:capability ;
-                     rdfs:label "Video processing" ;
-                     peo:description "Capability to process video files." .
+                     rdfs:comment "Capability to process video files." ;
+                     rdfs:label "Video processing" .
 
 
 ###  https://w3id.org/peo#video_task
 peo:video_task rdf:type owl:Class ;
                rdfs:subClassOf peo:task ;
-               rdfs:label "Video task" ;
-               peo:description "Task involving video processing." .
+               rdfs:comment "Task involving video processing." ;
+               rdfs:label "Video task" .
 
 
 ###  https://w3id.org/peo#vit_encoder
 peo:vit_encoder rdf:type owl:Class ;
                 rdfs:subClassOf peo:encoder ;
+                rdfs:comment "A Vision Transformer encoder that splits an image into patches, treats them as tokens, and processes them using self-attention mechanisms to learn spatial and semantic relationships." ;
                 rdfs:label "ViT Encoder" ;
-                peo:description "A Vision Transformer encoder that splits an image into patches, treats them as tokens, and processes them using self-attention mechanisms to learn spatial and semantic relationships." ;
                 peo:reference "https://en.wikipedia.org/wiki/Vision_transformer" .
 
 
@@ -1794,8 +1796,8 @@ peo:xlnet rdf:type owl:Class ;
                             owl:onProperty peo:has_model_architecture ;
                             owl:someValuesFrom peo:transformer_xl
                           ] ;
+          rdfs:comment "Generalized autoregressive model that captures bidirectional context for NLP tasks." ;
           rdfs:label "XLNet" ;
-          peo:description "Generalized autoregressive model that captures bidirectional context for NLP tasks." ;
           peo:paper "n.a." ;
           peo:website "https://github.com/zihangdai/xlnet" .
 
@@ -1803,8 +1805,8 @@ peo:xlnet rdf:type owl:Class ;
 ###  https://w3id.org/peo#zero_shot_prompting
 peo:zero_shot_prompting rdf:type owl:Class ;
                         rdfs:subClassOf peo:prompting_technique ;
+                        rdfs:comment "Technique where an AI model generates responses or performs tasks without any specific examples, relying solely on the instructions given in the prompt." ;
                         rdfs:label "Zero shot prompting" ;
-                        peo:description "Technique where an AI model generates responses or performs tasks without any specific examples, relying solely on the instructions given in the prompt." ;
                         peo:reference "https://www.promptingguide.ai/techniques/zeroshot" .
 
 
