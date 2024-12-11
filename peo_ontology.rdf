@@ -89,6 +89,7 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/peo#based_on">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="https://w3id.org/peo#basis_for"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#large_language_model"/>
         <rdfs:range rdf:resource="https://w3id.org/peo#large_language_model"/>
         <rdfs:comment>Relationship between to two large language models in which a large language model uses another large language model as base.</rdfs:comment>
@@ -101,6 +102,7 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/peo#basis_for">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#large_language_model"/>
         <rdfs:range rdf:resource="https://w3id.org/peo#large_language_model"/>
         <rdfs:comment>Relationship between to two large language models in which a large language model is the base of another large language model.</rdfs:comment>
@@ -218,6 +220,7 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/peo#has_organization">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="https://w3id.org/peo#is_organization_of"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#organization"/>
         <rdfs:range rdf:resource="https://w3id.org/peo#organization"/>
         <rdfs:comment>Relationship between two organizations (x and y) where, x controls the organization y.</rdfs:comment>
@@ -293,6 +296,7 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/peo#is_organization_of">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#organization"/>
         <rdfs:range rdf:resource="https://w3id.org/peo#organization"/>
         <rdfs:comment>Relationship between an organization x and another organization y, where x is controlled by y.</rdfs:comment>
@@ -369,6 +373,7 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/peo#prompt_followedby_prompt">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="https://w3id.org/peo#prompt_follows_prompt"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#prompt"/>
         <rdfs:range rdf:resource="https://w3id.org/peo#prompt"/>
         <rdfs:comment>The first prompt is after the second prompt</rdfs:comment>
@@ -394,6 +399,7 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/peo#prompt_follows_prompt">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#prompt"/>
         <rdfs:range rdf:resource="https://w3id.org/peo#prompt"/>
         <rdfs:comment>The second prompt is after the first prompt</rdfs:comment>

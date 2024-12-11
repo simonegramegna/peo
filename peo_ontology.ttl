@@ -57,6 +57,7 @@ peo:website rdf:type owl:AnnotationProperty .
 peo:based_on rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf owl:topObjectProperty ;
              owl:inverseOf peo:basis_for ;
+             rdf:type owl:TransitiveProperty ;
              rdfs:domain peo:large_language_model ;
              rdfs:range peo:large_language_model ;
              rdfs:comment "Relationship between to two large language models in which a large language model uses another large language model as base." ;
@@ -66,6 +67,7 @@ peo:based_on rdf:type owl:ObjectProperty ;
 ###  https://w3id.org/peo#basis_for
 peo:basis_for rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf owl:topObjectProperty ;
+              rdf:type owl:TransitiveProperty ;
               rdfs:domain peo:large_language_model ;
               rdfs:range peo:large_language_model ;
               rdfs:comment "Relationship between to two large language models in which a large language model is the base of another large language model." ;
@@ -156,6 +158,7 @@ peo:has_model_architecture rdf:type owl:ObjectProperty ;
 peo:has_organization rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf owl:topObjectProperty ;
                      owl:inverseOf peo:is_organization_of ;
+                     rdf:type owl:TransitiveProperty ;
                      rdfs:domain peo:organization ;
                      rdfs:range peo:organization ;
                      rdfs:comment "Relationship between two organizations (x and y) where, x controls the organization y." ;
@@ -213,6 +216,7 @@ peo:is_model_architecture_of rdf:type owl:ObjectProperty ;
 ###  https://w3id.org/peo#is_organization_of
 peo:is_organization_of rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf owl:topObjectProperty ;
+                       rdf:type owl:TransitiveProperty ;
                        rdfs:domain peo:organization ;
                        rdfs:range peo:organization ;
                        rdfs:comment "Relationship between an organization x and another organization y, where x is controlled by y." ;
@@ -271,6 +275,7 @@ peo:processes rdf:type owl:ObjectProperty ;
 peo:prompt_followedby_prompt rdf:type owl:ObjectProperty ;
                              rdfs:subPropertyOf owl:topObjectProperty ;
                              owl:inverseOf peo:prompt_follows_prompt ;
+                             rdf:type owl:TransitiveProperty ;
                              rdfs:domain peo:prompt ;
                              rdfs:range peo:prompt ;
                              rdfs:comment "The first prompt is after the second prompt" ;
@@ -290,6 +295,7 @@ peo:prompt_followedby_response rdf:type owl:ObjectProperty ;
 ###  https://w3id.org/peo#prompt_follows_prompt
 peo:prompt_follows_prompt rdf:type owl:ObjectProperty ;
                           rdfs:subPropertyOf owl:topObjectProperty ;
+                          rdf:type owl:TransitiveProperty ;
                           rdfs:domain peo:prompt ;
                           rdfs:range peo:prompt ;
                           rdfs:comment "The second prompt is after the first prompt" ;
