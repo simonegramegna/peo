@@ -11,12 +11,11 @@
      xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#">
     <owl:Ontology rdf:about="https://w3id.org/peo#">
+        <rdfs:comment>The PEO ontology is a modern ontology that covers state-of-art prompt engineering techniques and large language models. The ontology is designed to support students, researchers and developers who want to know more about prompt engineering, applying prompting techniques in solving tasks.</rdfs:comment>
         <rdfs:label>PEO ontology: an ontology for prompt engineering and large language models.</rdfs:label>
         <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</owl:versionInfo>
         <peo:creator>Simone Gramegna</peo:creator>
-        <rdfs:comment>The PEO ontology is a modern ontology that covers state-of-art prompt engineering techniques and large language models. The ontology is designed to support students, researchers and developers who want to know more about prompt engineering, applying prompting techniques in solving tasks.</rdfs:comment>
         <peo:language>english</peo:language>
-        <peo:license>GPL-3.0 license</peo:license>
     </owl:Ontology>
     
 
@@ -41,7 +40,7 @@
     <!-- https://w3id.org/peo#creator -->
 
     <owl:AnnotationProperty rdf:about="https://w3id.org/peo#creator"/>
-     
+    
 
 
     <!-- https://w3id.org/peo#language -->
@@ -92,8 +91,8 @@
         <owl:inverseOf rdf:resource="https://w3id.org/peo#basis_for"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#large_language_model"/>
         <rdfs:range rdf:resource="https://w3id.org/peo#large_language_model"/>
-        <rdfs:label>based_on</rdfs:label>
         <rdfs:comment>Relationship between to two large language models in which a large language model uses another large language model as base.</rdfs:comment>
+        <rdfs:label>based_on</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -104,8 +103,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#large_language_model"/>
         <rdfs:range rdf:resource="https://w3id.org/peo#large_language_model"/>
-        <rdfs:label>basis_for</rdfs:label>
         <rdfs:comment>Relationship between to two large language models in which a large language model is the base of another large language model.</rdfs:comment>
+        <rdfs:label>basis_for</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -117,8 +116,8 @@
         <owl:inverseOf rdf:resource="https://w3id.org/peo#develops"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#large_language_model"/>
         <rdfs:range rdf:resource="https://w3id.org/peo#organization"/>
-        <rdfs:label>developed_by</rdfs:label>
         <rdfs:comment>Relationship between a large language model and an organization, where the model is developed by the organization.</rdfs:comment>
+        <rdfs:label>developed_by</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -129,8 +128,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#organization"/>
         <rdfs:range rdf:resource="https://w3id.org/peo#large_language_model"/>
-        <rdfs:label>develops</rdfs:label>
         <rdfs:comment>Relationship between a large language model and an organization, where the organization develops the model.</rdfs:comment>
+        <rdfs:label>develops</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -143,8 +142,8 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#large_language_model"/>
         <rdfs:range rdf:resource="https://w3id.org/peo#large_language_model"/>
-        <rdfs:label>evolved_from</rdfs:label>
         <rdfs:comment>Relationship between two large language models (x and y), where x is evolved from y.</rdfs:comment>
+        <rdfs:label>evolved_from</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -156,8 +155,8 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#large_language_model"/>
         <rdfs:range rdf:resource="https://w3id.org/peo#large_language_model"/>
-        <rdfs:label>evolves</rdfs:label>
         <rdfs:comment>Relationship between two large language models (x and y), where x is evolves y.</rdfs:comment>
+        <rdfs:label>evolves</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -169,8 +168,8 @@
         <owl:inverseOf rdf:resource="https://w3id.org/peo#response_generated_using"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#large_language_model"/>
         <rdfs:range rdf:resource="https://w3id.org/peo#response"/>
-        <rdfs:label>generates_response</rdfs:label>
         <rdfs:comment>Relationship between a large language models and a response, where the llm generates the response.</rdfs:comment>
+        <rdfs:label>generates_response</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -182,8 +181,8 @@
         <owl:inverseOf rdf:resource="https://w3id.org/peo#is_capability"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#large_language_model"/>
         <rdfs:range rdf:resource="https://w3id.org/peo#capability"/>
-        <rdfs:label>has_capability</rdfs:label>
         <rdfs:comment>Relationship between a large language model and a capability, where the llm has that capability.</rdfs:comment>
+        <rdfs:label>has_capability</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -195,8 +194,8 @@
         <owl:inverseOf rdf:resource="https://w3id.org/peo#has_prompt"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#prompt"/>
         <rdfs:range rdf:resource="https://w3id.org/peo#chat"/>
-        <rdfs:label>has_context</rdfs:label>
         <rdfs:comment>Relationship between a prompt and a chat, where the prompt has as context the chat.</rdfs:comment>
+        <rdfs:label>has_context</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -208,8 +207,8 @@
         <owl:inverseOf rdf:resource="https://w3id.org/peo#is_model_architecture_of"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#large_language_model"/>
         <rdfs:range rdf:resource="https://w3id.org/peo#base_model"/>
-        <rdfs:label>has_model_architecture</rdfs:label>
         <rdfs:comment>Relationship between a large language model and a basic model, where the model is the component of  the large language model.</rdfs:comment>
+        <rdfs:label>has_model_architecture</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -221,8 +220,8 @@
         <owl:inverseOf rdf:resource="https://w3id.org/peo#is_organization_of"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#organization"/>
         <rdfs:range rdf:resource="https://w3id.org/peo#organization"/>
-        <rdfs:label>has_organization</rdfs:label>
         <rdfs:comment>Relationship between two organizations (x and y) where, x controls the organization y.</rdfs:comment>
+        <rdfs:label>has_organization</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -233,8 +232,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#chat"/>
         <rdfs:range rdf:resource="https://w3id.org/peo#prompt"/>
-        <rdfs:label>has_prompt</rdfs:label>
         <rdfs:comment>Relation between chat and a prompt, where the chat has that prompt.</rdfs:comment>
+        <rdfs:label>has_prompt</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -246,8 +245,8 @@
         <owl:inverseOf rdf:resource="https://w3id.org/peo#is_response_of"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#chat"/>
         <rdfs:range rdf:resource="https://w3id.org/peo#response"/>
-        <rdfs:label>has_response</rdfs:label>
         <rdfs:comment>Relation between a chat and a response, where the chat has that response.</rdfs:comment>
+        <rdfs:label>has_response</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -256,11 +255,12 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/peo#has_variant">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#large_language_model"/>
         <rdfs:range rdf:resource="https://w3id.org/peo#large_language_model"/>
-        <rdfs:label>has_variant</rdfs:label>
         <rdfs:comment>Relation between two large language models (x and y), where x has y as another version.</rdfs:comment>
+        <rdfs:label>has_variant</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -271,8 +271,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#capability"/>
         <rdfs:range rdf:resource="https://w3id.org/peo#large_language_model"/>
-        <rdfs:label>is_capability</rdfs:label>
         <rdfs:comment>Relationship between a capability and a large language model, where the capability is capability of the llm.</rdfs:comment>
+        <rdfs:label>is_capability</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -283,8 +283,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#base_model"/>
         <rdfs:range rdf:resource="https://w3id.org/peo#large_language_model"/>
-        <rdfs:label>is_model_architecture_of</rdfs:label>
         <rdfs:comment>Relationship between a base model and a large language model, where the base model is used as architecture of the llm.</rdfs:comment>
+        <rdfs:label>is_model_architecture_of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -295,8 +295,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#organization"/>
         <rdfs:range rdf:resource="https://w3id.org/peo#organization"/>
-        <rdfs:label>is_organization_of</rdfs:label>
         <rdfs:comment>Relationship between an organization x and another organization y, where x is controlled by y.</rdfs:comment>
+        <rdfs:label>is_organization_of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -307,8 +307,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#response"/>
         <rdfs:range rdf:resource="https://w3id.org/peo#chat"/>
-        <rdfs:label>is_response_of</rdfs:label>
         <rdfs:comment>Response belongs to a chat</rdfs:comment>
+        <rdfs:label>is_response_of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -320,8 +320,8 @@
         <owl:inverseOf rdf:resource="https://w3id.org/peo#uses_model"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#large_language_model"/>
         <rdfs:range rdf:resource="https://w3id.org/peo#chat"/>
-        <rdfs:label>is_used_in_chat</rdfs:label>
         <rdfs:comment>Relation between a large language model and a chat, where the model is used in that chat</rdfs:comment>
+        <rdfs:label>is_used_in_chat</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -333,8 +333,8 @@
         <owl:inverseOf rdf:resource="https://w3id.org/peo#prompt_generated_using"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#prompting_technique"/>
         <rdfs:range rdf:resource="https://w3id.org/peo#prompt"/>
-        <rdfs:label>is_used_in_prompt</rdfs:label>
         <rdfs:comment>Relation between a prompt and a prompting technique, where the prompt is generated using that prompting technique</rdfs:comment>
+        <rdfs:label>is_used_in_prompt</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -346,8 +346,8 @@
         <owl:inverseOf rdf:resource="https://w3id.org/peo#processes"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#prompt"/>
         <rdfs:range rdf:resource="https://w3id.org/peo#large_language_model"/>
-        <rdfs:label>processed_by</rdfs:label>
         <rdfs:comment>Relation between a prompt and a large language model, where the prompt is given as input to the large language model</rdfs:comment>
+        <rdfs:label>processed_by</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -358,8 +358,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#large_language_model"/>
         <rdfs:range rdf:resource="https://w3id.org/peo#prompt"/>
-        <rdfs:label>processes</rdfs:label>
         <rdfs:comment>Relation between a large language model and a prompt, where the large language model processes the prompt</rdfs:comment>
+        <rdfs:label>processes</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -371,8 +371,8 @@
         <owl:inverseOf rdf:resource="https://w3id.org/peo#prompt_follows_prompt"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#prompt"/>
         <rdfs:range rdf:resource="https://w3id.org/peo#prompt"/>
-        <rdfs:label>prompt_followedby_prompt</rdfs:label>
         <rdfs:comment>The first prompt is after the second prompt</rdfs:comment>
+        <rdfs:label>prompt_followedby_prompt</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -384,8 +384,8 @@
         <owl:inverseOf rdf:resource="https://w3id.org/peo#response_follows_prompt"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#prompt"/>
         <rdfs:range rdf:resource="https://w3id.org/peo#response"/>
-        <rdfs:label>prompt_followedby_response</rdfs:label>
         <rdfs:comment>Prompt is after response</rdfs:comment>
+        <rdfs:label>prompt_followedby_response</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -396,8 +396,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#prompt"/>
         <rdfs:range rdf:resource="https://w3id.org/peo#prompt"/>
-        <rdfs:label>prompt_follows_prompt</rdfs:label>
         <rdfs:comment>The second prompt is after the first prompt</rdfs:comment>
+        <rdfs:label>prompt_follows_prompt</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -409,8 +409,8 @@
         <owl:inverseOf rdf:resource="https://w3id.org/peo#response_followedby_prompt"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#prompt"/>
         <rdfs:range rdf:resource="https://w3id.org/peo#response"/>
-        <rdfs:label>prompt_follows_response</rdfs:label>
         <rdfs:comment>Response is after prompt</rdfs:comment>
+        <rdfs:label>prompt_follows_response</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -421,8 +421,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#prompt"/>
         <rdfs:range rdf:resource="https://w3id.org/peo#prompting_technique"/>
-        <rdfs:label>prompt_generated_using</rdfs:label>
         <rdfs:comment>Prompt generated using a prompting technique</rdfs:comment>
+        <rdfs:label>prompt_generated_using</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -433,8 +433,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#response"/>
         <rdfs:range rdf:resource="https://w3id.org/peo#prompt"/>
-        <rdfs:label>response_followedby_prompt</rdfs:label>
         <rdfs:comment>Response is after a prompt</rdfs:comment>
+        <rdfs:label>response_followedby_prompt</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -445,8 +445,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#response"/>
         <rdfs:range rdf:resource="https://w3id.org/peo#prompt"/>
-        <rdfs:label>response_follows_prompt</rdfs:label>
         <rdfs:comment>Prompt is after response</rdfs:comment>
+        <rdfs:label>response_follows_prompt</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -457,8 +457,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#response"/>
         <rdfs:range rdf:resource="https://w3id.org/peo#large_language_model"/>
-        <rdfs:label>response_generated_using</rdfs:label>
         <rdfs:comment>Response generated using a large language model</rdfs:comment>
+        <rdfs:label>response_generated_using</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -470,8 +470,8 @@
         <owl:inverseOf rdf:resource="https://w3id.org/peo#solves"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#task"/>
         <rdfs:range rdf:resource="https://w3id.org/peo#prompting_technique"/>
-        <rdfs:label>solved_by</rdfs:label>
         <rdfs:comment>Task solved by a prompting technique</rdfs:comment>
+        <rdfs:label>solved_by</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -482,8 +482,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#prompting_technique"/>
         <rdfs:range rdf:resource="https://w3id.org/peo#task"/>
-        <rdfs:label>solves_task</rdfs:label>
         <rdfs:comment>Relation between a prompting technique and a task, where the technique solves that task.</rdfs:comment>
+        <rdfs:label>solves_task</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -494,8 +494,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#chat"/>
         <rdfs:range rdf:resource="https://w3id.org/peo#large_language_model"/>
-        <rdfs:label>uses_model</rdfs:label>
         <rdfs:comment>Realtion between a chat and a large language model, where the chat is with the large language model</rdfs:comment>
+        <rdfs:label>uses_model</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -517,8 +517,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#chat"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label>end_time_chat</rdfs:label>
         <rdfs:comment>End time of a chat.</rdfs:comment>
+        <rdfs:label>end_time_chat</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -530,8 +530,8 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#chat"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label>has_chat_title</rdfs:label>
         <rdfs:comment>Title of a chat.</rdfs:comment>
+        <rdfs:label>has_chat_title</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -542,8 +542,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#task"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label>has_description</rdfs:label>
         <rdfs:comment>Description of a task</rdfs:comment>
+        <rdfs:label>has_description</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -554,8 +554,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#prompt"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label>has_input_data</rdfs:label>
         <rdfs:comment>Input data of a prompt.</rdfs:comment>
+        <rdfs:label>has_input_data</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -566,8 +566,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#prompt"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label>has_instruction</rdfs:label>
         <rdfs:comment>Instruction of a prompt.</rdfs:comment>
+        <rdfs:label>has_instruction</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -579,8 +579,8 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#large_language_model"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
-        <rdfs:label>has_number_parameters</rdfs:label>
         <rdfs:comment>Number of parameters of a large language model.</rdfs:comment>
+        <rdfs:label>has_number_parameters</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -591,8 +591,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#prompt"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label>has_output_indicator</rdfs:label>
         <rdfs:comment>Output format of the response of a prompt.</rdfs:comment>
+        <rdfs:label>has_output_indicator</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -604,8 +604,8 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#large_language_model"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <rdfs:label>has_release_year</rdfs:label>
         <rdfs:comment>Release year of a large language model.</rdfs:comment>
+        <rdfs:label>has_release_year</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -617,8 +617,8 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#response"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label>has_response_value</rdfs:label>
         <rdfs:comment>What is written in the response.</rdfs:comment>
+        <rdfs:label>has_response_value</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -630,8 +630,8 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#organization"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label>official_website</rdfs:label>
         <rdfs:comment>Official website of an organization.</rdfs:comment>
+        <rdfs:label>official_website</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -643,8 +643,8 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#organization"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label>registered_name</rdfs:label>
         <rdfs:comment>Registered name of an organization.</rdfs:comment>
+        <rdfs:label>registered_name</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -656,8 +656,8 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/peo#chat"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label>start_time_chat</rdfs:label>
         <rdfs:comment>Start time of a chat.</rdfs:comment>
+        <rdfs:label>start_time_chat</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -677,8 +677,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#active_prompting">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#prompting_technique"/>
-        <rdfs:label>Active prompting</rdfs:label>
         <rdfs:comment>Technique where specific, dynamic instructions are given to a model to guide it through a multi-step or interactive process, often requiring the model to actively engage, reflect, or respond iteratively to achieve a targeted outcome.</rdfs:comment>
+        <rdfs:label>Active prompting</rdfs:label>
         <peo:reference>https://arxiv.org/abs/2302.12246</peo:reference>
     </owl:Class>
     
@@ -706,8 +706,8 @@
                 <owl:someValuesFrom rdf:resource="https://w3id.org/peo#transformer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label>Alpaca</rdfs:label>
         <rdfs:comment>Fine-tuned language model for instruction-following tasks based on Meta&apos;s LLaMA model.</rdfs:comment>
+        <rdfs:label>Alpaca</rdfs:label>
         <peo:paper>n.a.</peo:paper>
         <peo:website>https://crfm.stanford.edu/2023/03/13/alpaca.html</peo:website>
     </owl:Class>
@@ -718,8 +718,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#analogical_prompting">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#prompting_technique"/>
-        <rdfs:label>Analogical prompting</rdfs:label>
         <rdfs:comment>Technique that guides large language models to self-generate relevant examples or knowledge based on analogies, aiding them in reasoning through new problems without labeled exemplars.</rdfs:comment>
+        <rdfs:label>Analogical prompting</rdfs:label>
         <peo:reference>https://arxiv.org/pdf/2310.01714</peo:reference>
     </owl:Class>
     
@@ -729,8 +729,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#audio_explanation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#audio_task"/>
-        <rdfs:label>Audio explanation</rdfs:label>
         <rdfs:comment>Explanation of the content of an audio file.</rdfs:comment>
+        <rdfs:label>Audio explanation</rdfs:label>
     </owl:Class>
     
 
@@ -739,8 +739,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#audio_generation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#audio_task"/>
-        <rdfs:label>Audio generation</rdfs:label>
         <rdfs:comment>Generation of an audio file.</rdfs:comment>
+        <rdfs:label>Audio generation</rdfs:label>
     </owl:Class>
     
 
@@ -749,8 +749,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#audio_processing">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#capability"/>
-        <rdfs:label>Audio processing</rdfs:label>
         <rdfs:comment>Capability to process audio files.</rdfs:comment>
+        <rdfs:label>Audio processing</rdfs:label>
     </owl:Class>
     
 
@@ -759,8 +759,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#audio_task">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#task"/>
-        <rdfs:label>Audio task</rdfs:label>
         <rdfs:comment>Task involving audio files.</rdfs:comment>
+        <rdfs:label>Audio task</rdfs:label>
     </owl:Class>
     
 
@@ -769,8 +769,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#automatic_cot_prompting">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#prompting_technique"/>
-        <rdfs:label>Automatic Chain-of-Thought prompting</rdfs:label>
         <rdfs:comment>Technique where models autonomously generate step-by-step reasoning, enhancing structured problem-solving without explicit intermediate prompts.</rdfs:comment>
+        <rdfs:label>Automatic Chain-of-Thought prompting</rdfs:label>
         <peo:reference>https://arxiv.org/abs/2210.03493</peo:reference>
     </owl:Class>
     
@@ -779,8 +779,8 @@
     <!-- https://w3id.org/peo#base_model -->
 
     <owl:Class rdf:about="https://w3id.org/peo#base_model">
-        <rdfs:label>Base model</rdfs:label>
         <rdfs:comment>Base model used as base architecture by each large language model.</rdfs:comment>
+        <rdfs:label>Base model</rdfs:label>
     </owl:Class>
     
 
@@ -801,8 +801,8 @@
                 <owl:someValuesFrom rdf:resource="https://w3id.org/peo#encoder_only"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label>BERT</rdfs:label>
         <rdfs:comment>(Bidirectional Encoder Representations from Transformers) An LLM by Google designed for NLP tasks, known for understanding context in both directions within text.</rdfs:comment>
+        <rdfs:label>BERT</rdfs:label>
         <peo:paper>https://aclanthology.org/N19-1423.pdf</peo:paper>
         <peo:website>https://huggingface.co/bert-base-uncased</peo:website>
     </owl:Class>
@@ -825,8 +825,8 @@
                 <owl:someValuesFrom rdf:resource="https://w3id.org/peo#q_former"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label>BLIP-2</rdfs:label>
         <rdfs:comment>Multimodal model that integrates a frozen image encoder with a large language model via a Querying Transformer, enabling tasks like image captioning and visual question answering.</rdfs:comment>
+        <rdfs:label>BLIP-2</rdfs:label>
         <peo:paper>https://arxiv.org/abs/2301.12597</peo:paper>
         <peo:website>https://huggingface.co/docs/transformers/main/model_doc/blip-2</peo:website>
     </owl:Class>
@@ -849,8 +849,8 @@
                 <owl:someValuesFrom rdf:resource="https://w3id.org/peo#transformer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label>BLOOM</rdfs:label>
         <rdfs:comment>Large open-access language model designed to support multiple languages and dialects, aiming to make natural language processing more inclusive and accessible across diverse linguistic communities.</rdfs:comment>
+        <rdfs:label>BLOOM</rdfs:label>
         <peo:paper>https://arxiv.org/abs/2211.05100</peo:paper>
         <peo:website>https://huggingface.co/bigscience/bloom</peo:website>
     </owl:Class>
@@ -860,8 +860,8 @@
     <!-- https://w3id.org/peo#capability -->
 
     <owl:Class rdf:about="https://w3id.org/peo#capability">
-        <rdfs:label>Capability</rdfs:label>
         <rdfs:comment>Possibile capability of large language models.</rdfs:comment>
+        <rdfs:label>Capability</rdfs:label>
     </owl:Class>
     
 
@@ -870,8 +870,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#chain_of_code_prompting">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#code_prompting"/>
-        <rdfs:label>Chain-of-Code prompting</rdfs:label>
         <rdfs:comment>Technique that enhances reasoning in language models by combining code generation with a &quot;LMulator&quot; that simulates code execution for complex tasks, enabling models to solve both algorithmic and semantic problems.</rdfs:comment>
+        <rdfs:label>Chain-of-Code prompting</rdfs:label>
         <peo:reference>https://arxiv.org/abs/2312.04474</peo:reference>
     </owl:Class>
     
@@ -881,8 +881,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#chain_of_knowledge_prompting">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#prompting_technique"/>
-        <rdfs:label>Chain-of-Knowledge prompting</rdfs:label>
         <rdfs:comment>Technique that enhances large language models by dynamically integrating factual information from heterogeneous knowledge sources, aiming to improve accuracy and reduce hallucinations in generated responses.</rdfs:comment>
+        <rdfs:label>Chain-of-Knowledge prompting</rdfs:label>
         <peo:reference>https://arxiv.org/abs/2305.13269</peo:reference>
     </owl:Class>
     
@@ -892,8 +892,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#chain_of_note_prompting">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#prompting_technique"/>
-        <rdfs:label>Chain-of-Note prompting</rdfs:label>
         <rdfs:comment>Technique that enhances retrieval-augmented language models by generating sequential reading notes for retrieved documents, enabling systematic evaluation of relevance and reliability to produce more accurate responses.</rdfs:comment>
+        <rdfs:label>Chain-of-Note prompting</rdfs:label>
         <peo:reference>https://arxiv.org/abs/2311.09210</peo:reference>
     </owl:Class>
     
@@ -903,8 +903,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#chain_of_table_prompting">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#prompting_technique"/>
-        <rdfs:label>Chain-of-Table prompting</rdfs:label>
         <rdfs:comment>Technique that enables large language models to perform iterative, table-based reasoning by dynamically transforming tables through a sequence of structured operations to derive accurate answers.</rdfs:comment>
+        <rdfs:label>Chain-of-Table prompting</rdfs:label>
         <peo:reference>https://arxiv.org/html/2401.04398v1</peo:reference>
     </owl:Class>
     
@@ -914,8 +914,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#chain_of_thought_prompting">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#prompting_technique"/>
-        <rdfs:label>Chain-of-Thought prompting</rdfs:label>
         <rdfs:comment>Prompting is a prompting technique that encourages a model to generate step-by-step reasoning or intermediate steps before arriving at a final answer.</rdfs:comment>
+        <rdfs:label>Chain-of-Thought prompting</rdfs:label>
         <peo:reference>https://arxiv.org/abs/2201.11903</peo:reference>
     </owl:Class>
     
@@ -925,8 +925,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#chain_of_verification_prompting">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#prompting_technique"/>
-        <rdfs:label>Chain-of-Verification prompting</rdfs:label>
         <rdfs:comment>Technique that reduces hallucinations in large language models by generating an initial response, planning and executing fact-checking questions, and producing a final verified answer.</rdfs:comment>
+        <rdfs:label>Chain-of-Verification prompting</rdfs:label>
         <peo:reference>https://arxiv.org/abs/2309.11495</peo:reference>
     </owl:Class>
     
@@ -942,8 +942,8 @@
                 <owl:someValuesFrom rdf:resource="https://w3id.org/peo#large_language_model"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label>Chat</rdfs:label>
         <rdfs:comment>Interactive dialogue session between a user and an AI model, involving an exchange of messages where the AI responds to user inputs based on the given prompts and context.</rdfs:comment>
+        <rdfs:label>Chat</rdfs:label>
     </owl:Class>
     
 
@@ -964,8 +964,8 @@
                 <owl:someValuesFrom rdf:resource="https://w3id.org/peo#transformer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label>Chinchilla</rdfs:label>
         <rdfs:comment>An LLM developed by DeepMind, designed to explore efficient scaling of model size relative to data, achieving high performance with fewer parameters.</rdfs:comment>
+        <rdfs:label>Chinchilla</rdfs:label>
         <peo:paper>https://arxiv.org/abs/2203.15556</peo:paper>
         <peo:website>n.a.</peo:website>
     </owl:Class>
@@ -988,8 +988,8 @@
                 <owl:someValuesFrom rdf:resource="https://w3id.org/peo#transformer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label>Claude</rdfs:label>
         <rdfs:comment>An AI assistant developed by Anthropic, aimed at being a safer and more controllable language model for dialogue and other NLP applications.</rdfs:comment>
+        <rdfs:label>Claude</rdfs:label>
         <peo:paper>n.a.</peo:paper>
         <peo:website>https://www.anthropic.com/claude</peo:website>
     </owl:Class>
@@ -1000,8 +1000,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#clip">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#base_model"/>
-        <rdfs:label>CLIP</rdfs:label>
         <rdfs:comment>CLIP (Contrastive Language–Image Pretraining) is a multimodal model that connects text and images by learning visual concepts from natural language descriptions.</rdfs:comment>
+        <rdfs:label>CLIP</rdfs:label>
         <peo:reference>https://arxiv.org/abs/2103.00020</peo:reference>
     </owl:Class>
     
@@ -1011,8 +1011,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#code_explanation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#code_task"/>
-        <rdfs:label>Code explanation</rdfs:label>
         <rdfs:comment>Explanation of a piece of code.</rdfs:comment>
+        <rdfs:label>Code explanation</rdfs:label>
     </owl:Class>
     
 
@@ -1021,6 +1021,7 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#code_generation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#code_task"/>
+        <rdfs:comment>Generation of code</rdfs:comment>
         <rdfs:label>Code generation</rdfs:label>
     </owl:Class>
     
@@ -1030,8 +1031,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#code_processing">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#capability"/>
-        <rdfs:label>Code processing</rdfs:label>
         <rdfs:comment>Capability to process source code written in any programming language.</rdfs:comment>
+        <rdfs:label>Code processing</rdfs:label>
     </owl:Class>
     
 
@@ -1040,8 +1041,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#code_prompting">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#prompting_technique"/>
-        <rdfs:label>Code prompting technque</rdfs:label>
         <rdfs:comment>Prompting techniques to generate code</rdfs:comment>
+        <rdfs:label>Code prompting technque</rdfs:label>
     </owl:Class>
     
 
@@ -1050,8 +1051,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#code_task">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#task"/>
-        <rdfs:label>Code task</rdfs:label>
         <rdfs:comment>Task involving source code.</rdfs:comment>
+        <rdfs:label>Code task</rdfs:label>
     </owl:Class>
     
 
@@ -1072,8 +1073,8 @@
                 <owl:someValuesFrom rdf:resource="https://w3id.org/peo#vit_encoder"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label>CogVLM</rdfs:label>
         <rdfs:comment>Vision-language model developed to understand and generate both visual and textual information, bridging the gap between image recognition and natural language processing for more nuanced multimodal tasks.</rdfs:comment>
+        <rdfs:label>CogVLM</rdfs:label>
         <peo:paper>https://arxiv.org/abs/2312.08914</peo:paper>
         <peo:website>https://github.com/THUDM/CogVLM?tab=readme-ov-file#examples</peo:website>
     </owl:Class>
@@ -1096,8 +1097,8 @@
                 <owl:someValuesFrom rdf:resource="https://w3id.org/peo#transformer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label>Command R</rdfs:label>
         <rdfs:comment>Large language model with open weights optimized for a variety of use cases including reasoning, summarization, and question answering. Command-R has the capability for multilingual generation evaluated in 10 languages and highly performant RAG capabilities.</rdfs:comment>
+        <rdfs:label>Command R</rdfs:label>
         <peo:paper>n.a.</peo:paper>
         <peo:website>https://huggingface.co/CohereForAI/c4ai-command-r-v01</peo:website>
     </owl:Class>
@@ -1108,8 +1109,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#company">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#organization"/>
-        <rdfs:label>Company</rdfs:label>
         <rdfs:comment>Organization that develops an LLM for business purpose</rdfs:comment>
+        <rdfs:label>Company</rdfs:label>
     </owl:Class>
     
 
@@ -1142,8 +1143,8 @@
                 <owl:someValuesFrom rdf:resource="https://w3id.org/peo#transformer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label>DALL-E</rdfs:label>
         <rdfs:comment>DALL-E generates detailed images from textual descriptions, with the latest model offering enhanced prompt fidelity.</rdfs:comment>
+        <rdfs:label>DALL-E</rdfs:label>
         <peo:paper>n.a.</peo:paper>
         <peo:website>https://openai.com/dall-e-3/</peo:website>
     </owl:Class>
@@ -1154,8 +1155,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#decoder">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#base_model"/>
-        <rdfs:label>Decoder</rdfs:label>
         <rdfs:comment>Neural network architecture that generates outputs (e.g., text, images) based on input representations, typically used in sequence-to-sequence tasks, and often paired with an encoder in models like Transformer-based architectures.</rdfs:comment>
+        <rdfs:label>Decoder</rdfs:label>
         <peo:reference>https://medium.com/@mansoorsyed05/encoders-and-decoders-in-generative-ai-3a717d50fced</peo:reference>
     </owl:Class>
     
@@ -1165,8 +1166,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#decoder_only">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#decoder"/>
-        <rdfs:label>Decoder only</rdfs:label>
         <rdfs:comment>Neural network architecture that generates outputs directly from an initial prompt or sequence without requiring a separate encoder. It processes input autoregressively, predicting the next token one step at a time, and is commonly used in large language models like GPT.</rdfs:comment>
+        <rdfs:label>Decoder only</rdfs:label>
         <peo:reference>https://cameronrwolfe.substack.com/p/decoder-only-transformers-the-workhorse</peo:reference>
     </owl:Class>
     
@@ -1176,8 +1177,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#decomposed_prompting">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#prompting_technique"/>
-        <rdfs:label>Decomposed prompting</rdfs:label>
         <rdfs:comment>Modular technique that solves complex tasks by breaking them down into simpler sub-tasks, each handled by a specialized prompt or function.</rdfs:comment>
+        <rdfs:label>Decomposed prompting</rdfs:label>
         <peo:reference>https://arxiv.org/abs/2210.02406</peo:reference>
     </owl:Class>
     
@@ -1187,8 +1188,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#diffusion_model">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#base_model"/>
-        <rdfs:label>Diffusion model</rdfs:label>
         <rdfs:comment>Generative model that learns to create data (e.g., images, audio) by reversing a gradual noise-adding process applied to the data during training, generating realistic outputs by denoising starting from random noise.</rdfs:comment>
+        <rdfs:label>Diffusion model</rdfs:label>
         <peo:reference>https://en.wikipedia.org/wiki/Diffusion_model</peo:reference>
     </owl:Class>
     
@@ -1198,8 +1199,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#emotion_classification">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#text_task"/>
-        <rdfs:label>Emotion classification</rdfs:label>
         <rdfs:comment>Classification of text content.</rdfs:comment>
+        <rdfs:label>Emotion classification</rdfs:label>
     </owl:Class>
     
 
@@ -1208,8 +1209,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#emotion_prompting">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#prompting_technique"/>
-        <rdfs:label>Emotion prompting</rdfs:label>
         <rdfs:comment>Technique that guides a model to generate responses with a specific emotional tone or to recognize and respond to the emotions within input text, enhancing empathetic or sentiment-aware interactions.</rdfs:comment>
+        <rdfs:label>Emotion prompting</rdfs:label>
         <peo:reference>https://arxiv.org/abs/2307.11760</peo:reference>
     </owl:Class>
     
@@ -1219,8 +1220,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#encoder">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#base_model"/>
-        <rdfs:label>Encoder</rdfs:label>
         <rdfs:comment>Neural network component that processes input data (e.g., text, images, or audio) and transforms it into a dense, high-dimensional representation (latent space), capturing the most relevant features for subsequent tasks like classification, translation, or generation.</rdfs:comment>
+        <rdfs:label>Encoder</rdfs:label>
         <peo:reference>https://medium.com/@mansoorsyed05/encoders-and-decoders-in-generative-ai-3a717d50fced</peo:reference>
     </owl:Class>
     
@@ -1230,8 +1231,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#encoder_only">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#encoder"/>
-        <rdfs:label>Encoder only</rdfs:label>
         <rdfs:comment>Model that processes input data to generate a fixed-length representation or embeddings, commonly used in tasks like classification and information retrieval.</rdfs:comment>
+        <rdfs:label>Encoder only</rdfs:label>
         <peo:reference>https://medium.com/@pickleprat/encoder-only-architecture-bert-4b27f9c76860</peo:reference>
     </owl:Class>
     
@@ -1253,8 +1254,8 @@
                 <owl:someValuesFrom rdf:resource="https://w3id.org/peo#decoder_only"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label>Falcon</rdfs:label>
         <rdfs:comment>Falcon is a series of advanced language models aimed at text generation tasks.</rdfs:comment>
+        <rdfs:label>Falcon</rdfs:label>
         <peo:paper>https://arxiv.org/abs/2311.16867</peo:paper>
         <peo:website>https://falconllm.tii.ae/</peo:website>
     </owl:Class>
@@ -1265,8 +1266,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#few_shot_prompting">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#prompting_technique"/>
-        <rdfs:label>Few shot prompting</rdfs:label>
         <rdfs:comment>Technique where an AI model is provided with a few example inputs and outputs in the prompt, helping it understand the task and generate more accurate responses by leveraging these samples as context.</rdfs:comment>
+        <rdfs:label>Few shot prompting</rdfs:label>
         <peo:reference>https://arxiv.org/abs/2005.14165</peo:reference>
     </owl:Class>
     
@@ -1276,8 +1277,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#fix_deformed_generations">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#image_prompting"/>
-        <rdfs:label>Fix deformed generations</rdfs:label>
         <rdfs:comment>Prevent deformities by using negative prompts (such as negatively weighted terms) to de-emphasize them.</rdfs:comment>
+        <rdfs:label>Fix deformed generations</rdfs:label>
         <peo:reference>https://learnprompting.org/docs/image_prompting/fix_deformed_generations</peo:reference>
     </owl:Class>
     
@@ -1299,8 +1300,8 @@
                 <owl:someValuesFrom rdf:resource="https://w3id.org/peo#lamda_pt"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label>FLAN</rdfs:label>
         <rdfs:comment>(Fine-tuned Language Net) A Google model that applies instruction fine-tuning to improve task performance and generalization across diverse tasks.</rdfs:comment>
+        <rdfs:label>FLAN</rdfs:label>
         <peo:paper>https://arxiv.org/pdf/2210.11416</peo:paper>
         <peo:website>https://huggingface.co/google/flan-t5-base</peo:website>
     </owl:Class>
@@ -1353,8 +1354,8 @@
                 <owl:someValuesFrom rdf:resource="https://w3id.org/peo#transformer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label>Gemini</rdfs:label>
         <rdfs:comment>A series of LLMs by Google DeepMind, designed for conversational AI and multimodal applications</rdfs:comment>
+        <rdfs:label>Gemini</rdfs:label>
         <peo:paper>https://arxiv.org/abs/2312.11805</peo:paper>
         <peo:website>https://gemini.google.com/app</peo:website>
     </owl:Class>
@@ -1377,8 +1378,8 @@
                 <owl:someValuesFrom rdf:resource="https://w3id.org/peo#transformer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label>Gemma</rdfs:label>
         <rdfs:comment>Large Language Model designed for advanced natural language processing tasks, with a focus on accuracy and contextual text generation.</rdfs:comment>
+        <rdfs:label>Gemma</rdfs:label>
         <peo:paper>https://arxiv.org/abs/2403.08295</peo:paper>
         <peo:website>https://blog.google/technology/developers/gemma-open-models/</peo:website>
     </owl:Class>
@@ -1419,8 +1420,8 @@
                 <owl:someValuesFrom rdf:resource="https://w3id.org/peo#region_encoder"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label>GLaMM</rdfs:label>
         <rdfs:comment>Multimodal model that combines language and vision, enabling pixel-level grounding, object segmentation, and interactive visual conversations</rdfs:comment>
+        <rdfs:label>GLaMM</rdfs:label>
         <peo:paper>https://arxiv.org/abs/2311.03356</peo:paper>
         <peo:website>https://github.com/mbzuai-oryx/groundingLMM</peo:website>
     </owl:Class>
@@ -1431,8 +1432,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#global_image_encoder">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#encoder"/>
-        <rdfs:label>Global Image Encoder</rdfs:label>
         <rdfs:comment>A model that encodes an entire image into a single global feature vector, capturing the overall content and structure for tasks like classification or retrieval.</rdfs:comment>
+        <rdfs:label>Global Image Encoder</rdfs:label>
         <peo:reference>https://arxiv.org/html/2409.04095v1</peo:reference>
     </owl:Class>
     
@@ -1454,8 +1455,8 @@
                 <owl:someValuesFrom rdf:resource="https://w3id.org/peo#decoder_only"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label>GPT</rdfs:label>
         <rdfs:comment>(Generative Pre-trained Transformer) A series of transformer models by OpenAI, with GPT-4 as the latest, excelling in NLP and conversational tasks.</rdfs:comment>
+        <rdfs:label>GPT</rdfs:label>
         <peo:paper>n.a.</peo:paper>
         <peo:website>https://chatgpt.com/</peo:website>
     </owl:Class>
@@ -1466,8 +1467,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#graph_of_thought_prompting">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#prompting_technique"/>
-        <rdfs:label>Graph of Thoughts prompting</rdfs:label>
         <rdfs:comment>Techniques that structures prompt reasoning in a graph</rdfs:comment>
+        <rdfs:label>Graph of Thoughts prompting</rdfs:label>
         <peo:reference>https://arxiv.org/abs/2308.09687</peo:reference>
     </owl:Class>
     
@@ -1477,8 +1478,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#grounding_image_encoder">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#encoder"/>
-        <rdfs:label>Grounding Image Encoder</rdfs:label>
         <rdfs:comment>A model designed to encode images by linking specific visual elements to semantic concepts, useful for tasks like visual grounding or visual question answering.</rdfs:comment>
+        <rdfs:label>Grounding Image Encoder</rdfs:label>
         <peo:reference>https://arxiv.org/html/2409.08520v1</peo:reference>
     </owl:Class>
     
@@ -1488,8 +1489,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#image_explanation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#image_task"/>
-        <rdfs:label>Image explanation</rdfs:label>
         <rdfs:comment>Explanation of the content of an image.</rdfs:comment>
+        <rdfs:label>Image explanation</rdfs:label>
     </owl:Class>
     
 
@@ -1498,8 +1499,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#image_generation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#image_task"/>
-        <rdfs:label>Image generation</rdfs:label>
         <rdfs:comment>Generation of an image starting from a text prompt.</rdfs:comment>
+        <rdfs:label>Image generation</rdfs:label>
     </owl:Class>
     
 
@@ -1508,8 +1509,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#image_processing">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#capability"/>
-        <rdfs:label>Image processing</rdfs:label>
         <rdfs:comment>Capability to process images, understanding the content of the image.</rdfs:comment>
+        <rdfs:label>Image processing</rdfs:label>
     </owl:Class>
     
 
@@ -1518,8 +1519,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#image_prompting">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#prompting_technique"/>
-        <rdfs:label>Image prompting technique</rdfs:label>
         <rdfs:comment>Prompting techniques for images</rdfs:comment>
+        <rdfs:label>Image prompting technique</rdfs:label>
         <peo:reference>https://arxiv.org/abs/2204.13988</peo:reference>
     </owl:Class>
     
@@ -1529,8 +1530,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#image_segmentation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#image_task"/>
-        <rdfs:label>Image segmentation</rdfs:label>
         <rdfs:comment>Segmentation of image elements.</rdfs:comment>
+        <rdfs:label>Image segmentation</rdfs:label>
     </owl:Class>
     
 
@@ -1539,8 +1540,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#image_task">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#task"/>
-        <rdfs:label>Image task</rdfs:label>
         <rdfs:comment>Task involving images.</rdfs:comment>
+        <rdfs:label>Image task</rdfs:label>
     </owl:Class>
     
 
@@ -1549,8 +1550,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#lamda_pt">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#transformer"/>
-        <rdfs:label>LAMDA PT</rdfs:label>
         <rdfs:comment>Pre-trained conversational AI model by Google designed for open-domain, context-aware, and natural dialogue generation.</rdfs:comment>
+        <rdfs:label>LAMDA PT</rdfs:label>
         <peo:reference>https://arxiv.org/abs/2201.08239</peo:reference>
     </owl:Class>
     
@@ -1559,8 +1560,8 @@
     <!-- https://w3id.org/peo#large_language_model -->
 
     <owl:Class rdf:about="https://w3id.org/peo#large_language_model">
-        <rdfs:label>Large Language Model</rdfs:label>
         <rdfs:comment>Type of computational model designed for natural language processing tasks such as language generation.</rdfs:comment>
+        <rdfs:label>Large Language Model</rdfs:label>
         <peo:reference>https://en.wikipedia.org/wiki/Large_language_model</peo:reference>
     </owl:Class>
     
@@ -1577,8 +1578,8 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:label>LLM chracteristic</rdfs:label>
         <rdfs:comment>The class represents the defining traits of a large language model, combining its base model attributes and capabilities.</rdfs:comment>
+        <rdfs:label>LLM chracteristic</rdfs:label>
     </owl:Class>
     
 
@@ -1587,8 +1588,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#least_to_most_prompting">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#prompting_technique"/>
-        <rdfs:label>Least-to-most prompting</rdfs:label>
         <rdfs:comment>Technique that involves breaking down complex tasks into simpler subproblems, solving each sequentially to leverage previous answers for better generalization on challenging tasks.</rdfs:comment>
+        <rdfs:label>Least-to-most prompting</rdfs:label>
         <peo:reference>https://arxiv.org/abs/2205.10625</peo:reference>
     </owl:Class>
     
@@ -1598,8 +1599,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#lighting">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#image_prompting"/>
-        <rdfs:label>Lighting</rdfs:label>
         <rdfs:comment>Words that describe the lighting of the object to generate</rdfs:comment>
+        <rdfs:label>Lighting</rdfs:label>
         <peo:reference>https://arxiv.org/abs/2211.15462</peo:reference>
     </owl:Class>
     
@@ -1621,8 +1622,8 @@
                 <owl:someValuesFrom rdf:resource="https://w3id.org/peo#transformer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label>LLaMA</rdfs:label>
         <rdfs:comment>(Large Language Model Meta AI) A series of open-source models by Meta, designed to be efficient for research and commercial use.</rdfs:comment>
+        <rdfs:label>LLaMA</rdfs:label>
         <peo:paper>https://arxiv.org/abs/2302.13971</peo:paper>
         <peo:website>https://huggingface.co/docs/transformers/main/model_doc/llama</peo:website>
     </owl:Class>
@@ -1633,8 +1634,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#logical_chain_of_thought_prompting">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#prompting_technique"/>
-        <rdfs:label>Logical Chain-of-Thought prompting</rdfs:label>
         <rdfs:comment>Technique that enhances language models&apos; logical reasoning skills by using a structured dataset of chain-of-thought (CoT) instructions, allowing models to perform step-by-step reasoning based on logical premises and inference rule</rdfs:comment>
+        <rdfs:label>Logical Chain-of-Thought prompting</rdfs:label>
         <peo:reference>https://arxiv.org/abs/2305.12147</peo:reference>
     </owl:Class>
     
@@ -1644,8 +1645,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#mathematical_understanding">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#text_task"/>
-        <rdfs:label>Mathematical understanding</rdfs:label>
         <rdfs:comment>Solving of mathematical formulas and problems.</rdfs:comment>
+        <rdfs:label>Mathematical understanding</rdfs:label>
     </owl:Class>
     
 
@@ -1666,8 +1667,8 @@
                 <owl:someValuesFrom rdf:resource="https://w3id.org/peo#diffusion_model"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label>Midjourney</rdfs:label>
         <rdfs:comment>Midjourney is an AI tool that generates images based on text prompts with artistic and realistic quality.</rdfs:comment>
+        <rdfs:label>Midjourney</rdfs:label>
         <peo:website>https://www.midjourney.com/</peo:website>
     </owl:Class>
     
@@ -1689,8 +1690,8 @@
                 <owl:someValuesFrom rdf:resource="https://w3id.org/peo#transformer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label>Minerva</rdfs:label>
         <rdfs:comment>Family of large language models developed by Sapienza University, trained on extensive Italian and English corpora to support diverse applications like text generation and natural language understanding.</rdfs:comment>
+        <rdfs:label>Minerva</rdfs:label>
         <peo:paper>n.a.</peo:paper>
         <peo:website>https://nlp.uniroma1.it/minerva/</peo:website>
     </owl:Class>
@@ -1713,8 +1714,8 @@
                 <owl:someValuesFrom rdf:resource="https://w3id.org/peo#transformer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label>Mistral</rdfs:label>
         <rdfs:comment>A language model focused on being efficient and high-performing, aiming to improve NLP capabilities with fewer resources.</rdfs:comment>
+        <rdfs:label>Mistral</rdfs:label>
         <peo:paper>https://arxiv.org/abs/2310.06825</peo:paper>
         <peo:website>https://chat.mistral.ai/chat</peo:website>
     </owl:Class>
@@ -1737,8 +1738,8 @@
                 <owl:someValuesFrom rdf:resource="https://w3id.org/peo#decoder_only"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label>MPT-7B</rdfs:label>
         <rdfs:comment>Decoder-style transformer with 6.7B parameters</rdfs:comment>
+        <rdfs:label>MPT-7B</rdfs:label>
         <peo:paper>n.a.</peo:paper>
         <peo:website>https://www.databricks.com/blog/mpt-7b</peo:website>
     </owl:Class>
@@ -1761,8 +1762,8 @@
                 <owl:someValuesFrom rdf:resource="https://w3id.org/peo#decoder_only"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label>OLMo</rdfs:label>
         <rdfs:comment>Open-source language model that aimes to provide a transparent, publicly accessible alternative to proprietary LLMs for research and applications in natural language processing.</rdfs:comment>
+        <rdfs:label>OLMo</rdfs:label>
         <peo:paper>https://arxiv.org/abs/2402.00838</peo:paper>
         <peo:website>https://allenai.org/olmo</peo:website>
     </owl:Class>
@@ -1785,8 +1786,8 @@
                 <owl:someValuesFrom rdf:resource="https://w3id.org/peo#decoder_only"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label>OpenELM</rdfs:label>
         <rdfs:comment>An open-source initiative focused on evolutionary learning and modeling, particularly in the context of NLP tasks.</rdfs:comment>
+        <rdfs:label>OpenELM</rdfs:label>
         <peo:paper>https://arxiv.org/abs/2404.14619</peo:paper>
         <peo:website>https://huggingface.co/apple/OpenELM</peo:website>
     </owl:Class>
@@ -1809,8 +1810,8 @@
                 <owl:someValuesFrom rdf:resource="https://w3id.org/peo#transformer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label>OPT</rdfs:label>
         <rdfs:comment>(Open Pretrained Transformer) A model developed by Meta, openly released to provide researchers with access to LLMs for a variety of applications.</rdfs:comment>
+        <rdfs:label>OPT</rdfs:label>
         <peo:paper>https://arxiv.org/abs/2205.01068</peo:paper>
         <peo:website>https://huggingface.co/facebook/opt-1.3b</peo:website>
     </owl:Class>
@@ -1820,8 +1821,8 @@
     <!-- https://w3id.org/peo#organization -->
 
     <owl:Class rdf:about="https://w3id.org/peo#organization">
-        <rdfs:label>Organization</rdfs:label>
         <rdfs:comment>An organization of people that develops a large language model</rdfs:comment>
+        <rdfs:label>Organization</rdfs:label>
     </owl:Class>
     
 
@@ -1848,8 +1849,8 @@
                 <owl:someValuesFrom rdf:resource="https://w3id.org/peo#transformer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label>PaLM</rdfs:label>
         <rdfs:comment>Large language model developed by Google, designed to perform a range of NLP tasks with high accuracy across languages, reasoning, and even code generation.</rdfs:comment>
+        <rdfs:label>PaLM</rdfs:label>
         <peo:paper>https://arxiv.org/abs/2204.02311</peo:paper>
         <peo:website>https://ai.google/discover/palm2/</peo:website>
     </owl:Class>
@@ -1872,8 +1873,8 @@
                 <owl:someValuesFrom rdf:resource="https://w3id.org/peo#transformer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label>Phi-1</rdfs:label>
         <rdfs:comment>A recently developed AI model by a specific organization or team, likely aimed at enhancing certain NLP or conversational AI capabilities (additional details may be required as it&apos;s a newer name).</rdfs:comment>
+        <rdfs:label>Phi-1</rdfs:label>
         <peo:paper>https://arxiv.org/abs/2306.11644</peo:paper>
         <peo:website>n.a.</peo:website>
     </owl:Class>
@@ -1884,20 +1885,9 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#pixel_decoder">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#decoder"/>
-        <rdfs:label>Pixel decoder</rdfs:label>
         <rdfs:comment>Neural network module used in computer vision tasks to refine and upsample low-resolution feature maps into high-resolution outputs, typically representing pixel-level predictions such as segmentation masks or image reconstruction.</rdfs:comment>
+        <rdfs:label>Pixel decoder</rdfs:label>
         <peo:reference>https://arxiv.org/abs/2212.11270</peo:reference>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/peo#plan_and_solve_prompting -->
-
-    <owl:Class rdf:about="https://w3id.org/peo#plan_and_solve_prompting">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/peo#prompting_technique"/>
-        <rdfs:label>Plan-and-Solve prompting</rdfs:label>
-        <rdfs:comment>Technique that guides large language models to first devise a plan that breaks down a complex task into subtasks, then execute the plan step-by-step for improved reasoning accuracy.</rdfs:comment>
-        <peo:reference>https://arxiv.org/abs/2305.04091</peo:reference>
     </owl:Class>
     
 
@@ -1906,8 +1896,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#program_of_thoughts_prompting">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#code_prompting"/>
-        <rdfs:label>Program of Thoughts prompting</rdfs:label>
         <rdfs:comment>Technique where the model follows structured, programmatic steps or logical rules within the prompt to solve complex tasks, similar to a pseudo-code or algorithmic approach.</rdfs:comment>
+        <rdfs:label>Program of Thoughts prompting</rdfs:label>
         <peo:reference>https://arxiv.org/abs/2211.12588</peo:reference>
     </owl:Class>
     
@@ -1917,8 +1907,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#prompt">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#prompt_engineering"/>
-        <rdfs:label>Prompt</rdfs:label>
         <rdfs:comment>Input to a large language model.</rdfs:comment>
+        <rdfs:label>Prompt</rdfs:label>
     </owl:Class>
     
 
@@ -1926,8 +1916,8 @@
     <!-- https://w3id.org/peo#prompt_engineering -->
 
     <owl:Class rdf:about="https://w3id.org/peo#prompt_engineering">
-        <rdfs:label>Prompt engineering</rdfs:label>
         <rdfs:comment>Practice of crafting and optimizing input prompts to guide AI models, particularly large language models, to produce desired outputs. It involves understanding the model&apos;s behavior and leveraging techniques like few-shot learning, zero-shot prompting, or specific formatting to achieve accurate, relevant, and context-aware results for various tasks.</rdfs:comment>
+        <rdfs:label>Prompt engineering</rdfs:label>
     </owl:Class>
     
 
@@ -1936,8 +1926,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#prompting_technique">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#prompt_engineering"/>
-        <rdfs:label>Prompting technique</rdfs:label>
         <rdfs:comment>Structured approach or method used to design prompts for interacting with AI models, aimed at optimizing their responses for specific tasks or objectives.</rdfs:comment>
+        <rdfs:label>Prompting technique</rdfs:label>
     </owl:Class>
     
 
@@ -1946,8 +1936,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#q_former">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#transformer"/>
-        <rdfs:label>Q-Former</rdfs:label>
         <rdfs:comment>A transformer-based model that uses query embeddings to encode specific features or focus areas in cross-modal or task-specific applications.</rdfs:comment>
+        <rdfs:label>Q-Former</rdfs:label>
         <peo:reference>https://abdulkaderhelwan.medium.com/q-former-1d83163975da</peo:reference>
     </owl:Class>
     
@@ -1957,8 +1947,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#quality_boosters">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#image_prompting"/>
-        <rdfs:label>Quality boosters</rdfs:label>
         <rdfs:comment>Terms that enhance style-agnostic attributes, such as detail and resolution, in AI-generated images.</rdfs:comment>
+        <rdfs:label>Quality boosters</rdfs:label>
         <peo:reference>https://arxiv.org/abs/2204.13988</peo:reference>
     </owl:Class>
     
@@ -1968,8 +1958,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#question_answering">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#text_task"/>
-        <rdfs:label>Question-answering</rdfs:label>
         <rdfs:comment>Task of generate answwers from a series of answwers.</rdfs:comment>
+        <rdfs:label>Question-answering</rdfs:label>
     </owl:Class>
     
 
@@ -1978,8 +1968,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#rag_prompting">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#prompting_technique"/>
-        <rdfs:label>Retrieval Augmented Generation - RAG prompting</rdfs:label>
         <rdfs:comment>Technique that combines retrieval of relevant external information with generative responses, enabling a model to access and integrate factual or context-specific data dynamically to produce more informed and accurate outputs.</rdfs:comment>
+        <rdfs:label>Retrieval Augmented Generation - RAG prompting</rdfs:label>
         <peo:reference>https://arxiv.org/pdf/2005.11401</peo:reference>
     </owl:Class>
     
@@ -1989,8 +1979,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#react_prompting">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#prompting_technique"/>
-        <rdfs:label>ReAct prompting</rdfs:label>
         <rdfs:comment>Technique where an AI model is guided to reason and act iteratively, encouraging it to think step-by-step while interweaving reasoning and actions to handle complex tasks more effectively.</rdfs:comment>
+        <rdfs:label>ReAct prompting</rdfs:label>
         <peo:reference>https://arxiv.org/abs/2210.03629</peo:reference>
     </owl:Class>
     
@@ -2000,8 +1990,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#recurrent_neural_network">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#base_model"/>
-        <rdfs:label>Recurrent Neural Network</rdfs:label>
         <rdfs:comment>A sequential model that processes input data one step at a time while maintaining a memory of past inputs via hidden states, suitable for time-series and sequential tasks.</rdfs:comment>
+        <rdfs:label>Recurrent Neural Network</rdfs:label>
         <peo:reference>https://en.wikipedia.org/wiki/Recurrent_neural_network</peo:reference>
     </owl:Class>
     
@@ -2011,8 +2001,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#region_encoder">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#encoder"/>
-        <rdfs:label>Region Encoder</rdfs:label>
         <rdfs:comment>A model that focuses on extracting feature representations from specific regions within an image, often used in object detection or region-based vision tasks.</rdfs:comment>
+        <rdfs:label>Region Encoder</rdfs:label>
         <peo:reference>https://arxiv.org/html/2306.05411v2</peo:reference>
     </owl:Class>
     
@@ -2022,20 +2012,9 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#repetition">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#image_prompting"/>
-        <rdfs:label>Repetition</rdfs:label>
         <rdfs:comment>Repeating the same word in a image prompt in order to augment some aspects</rdfs:comment>
+        <rdfs:label>Repetition</rdfs:label>
         <peo:reference>https://arxiv.org/abs/2204.13988</peo:reference>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/peo#rephrase_and_respond_prompting -->
-
-    <owl:Class rdf:about="https://w3id.org/peo#rephrase_and_respond_prompting">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/peo#prompting_technique"/>
-        <rdfs:label>Rephrase and Respond prompting</rdfs:label>
-        <rdfs:comment>Technique that allows an LLM to rephrase a user&apos;s question for clarity before responding, improving accuracy and reducing ambiguities.</rdfs:comment>
-        <peo:reference>https://arxiv.org/abs/2311.04205</peo:reference>
     </owl:Class>
     
 
@@ -2044,8 +2023,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#research_institution">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#organization"/>
-        <rdfs:label>Research institution</rdfs:label>
         <rdfs:comment>Institution of researchers and developers who develop a LLM  for research purposes.</rdfs:comment>
+        <rdfs:label>Research institution</rdfs:label>
     </owl:Class>
     
 
@@ -2054,8 +2033,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#response">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#prompt_engineering"/>
-        <rdfs:label>Response</rdfs:label>
         <rdfs:comment>Response given by a large language model.</rdfs:comment>
+        <rdfs:label>Response</rdfs:label>
     </owl:Class>
     
 
@@ -2064,8 +2043,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#role_prompting">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#prompting_technique"/>
-        <rdfs:label>Role prompting</rdfs:label>
         <rdfs:comment>Technique that involves giving the model a specific role to play, such as a helpful assistant or a knowledgeable expert</rdfs:comment>
+        <rdfs:label>Role prompting</rdfs:label>
         <peo:reference>https://learnprompting.org/docs/basics/roles?srsltid=AfmBOorOhcs91R9q-XT0yNLiN8nzLnDBonoztR-HX-iB9M4jk3nvadQo#user-content-fnref-1</peo:reference>
     </owl:Class>
     
@@ -2093,8 +2072,8 @@
                 <owl:someValuesFrom rdf:resource="https://w3id.org/peo#transformer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label>RWKV LLM</rdfs:label>
         <rdfs:comment>Large language model that integrates transformer and RNN principles to efficiently manage long-context sequences, supporting improved language understanding and generation over extensive text inputs.</rdfs:comment>
+        <rdfs:label>RWKV LLM</rdfs:label>
         <peo:paper>https://arxiv.org/abs/2305.13048</peo:paper>
         <peo:website>https://github.com/BlinkDL/RWKV-LM</peo:website>
     </owl:Class>
@@ -2105,8 +2084,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#scratchpad_prompting">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#code_prompting"/>
-        <rdfs:label>Scratchpad prompting</rdfs:label>
         <rdfs:comment>Technique where language models are guided to output intermediate computational steps—stored in a &quot;scratchpad&quot;—to solve complex, multi-step tasks, improving their accuracy and reasoning capabilities by breaking down problems step-by-step</rdfs:comment>
+        <rdfs:label>Scratchpad prompting</rdfs:label>
         <peo:reference>https://arxiv.org/abs/2112.00114</peo:reference>
     </owl:Class>
     
@@ -2116,8 +2095,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#self_consistency_prompting">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#prompting_technique"/>
-        <rdfs:label>Self consistency prompting</rdfs:label>
         <rdfs:comment>Technique where multiple reasoning paths or answers are generated by a model, and the final response is selected based on the most frequently occurring or consistent result, enhancing reliability and accuracy in complex problem-solving tasks.</rdfs:comment>
+        <rdfs:label>Self consistency prompting</rdfs:label>
         <peo:reference>https://arxiv.org/abs/2203.11171</peo:reference>
     </owl:Class>
     
@@ -2127,8 +2106,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#shot_type">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#image_prompting"/>
-        <rdfs:label>Shot type</rdfs:label>
         <rdfs:comment>Technique that incorporates various camera effects</rdfs:comment>
+        <rdfs:label>Shot type</rdfs:label>
         <peo:reference>https://learnprompting.org/docs/image_prompting/shot_type</peo:reference>
     </owl:Class>
     
@@ -2150,8 +2129,8 @@
                 <owl:someValuesFrom rdf:resource="https://w3id.org/peo#decoder_only"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label>Sora</rdfs:label>
         <rdfs:comment>Text-to-video AI model. Sora can create videos of up to a minute of realistic and imaginative scenes given text instructions.</rdfs:comment>
+        <rdfs:label>Sora</rdfs:label>
         <peo:paper>n.a.</peo:paper>
         <peo:website>https://openai.com/index/sora/</peo:website>
     </owl:Class>
@@ -2174,8 +2153,8 @@
                 <owl:someValuesFrom rdf:resource="https://w3id.org/peo#decoder_only"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label>StableLM</rdfs:label>
         <rdfs:comment>Open source large language model designed to support a range of natural language processing tasks with a focus on accessibility and transparency in model deployment and fine-tuning.</rdfs:comment>
+        <rdfs:label>StableLM</rdfs:label>
         <peo:paper>https://arxiv.org/abs/2402.17834</peo:paper>
         <peo:website>https://huggingface.co/stabilityai/stablelm-base-alpha-7b</peo:website>
     </owl:Class>
@@ -2198,8 +2177,8 @@
                 <owl:someValuesFrom rdf:resource="https://w3id.org/peo#decoder_only"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label>StarCoder</rdfs:label>
         <rdfs:comment>Large language model specialized for code generation and understanding designed to support multiple programming languages and assist developers in writing, debugging, and understanding code.</rdfs:comment>
+        <rdfs:label>StarCoder</rdfs:label>
         <peo:paper>https://arxiv.org/abs/2305.06161</peo:paper>
         <peo:website>https://huggingface.co/bigcode/starcoder</peo:website>
     </owl:Class>
@@ -2210,8 +2189,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#structured_cot_prompting">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#code_prompting"/>
-        <rdfs:label>Structured Chain-of-Thought prompting</rdfs:label>
         <rdfs:comment>Technique for code generation that guides language models to use structured programming steps-sequence, branch, and loop-to improve accuracy and code quality.</rdfs:comment>
+        <rdfs:label>Structured Chain-of-Thought prompting</rdfs:label>
         <peo:reference>https://arxiv.org/abs/2305.06599</peo:reference>
     </owl:Class>
     
@@ -2221,8 +2200,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#style_modifiers">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#image_prompting"/>
-        <rdfs:label>Style modifiers</rdfs:label>
         <rdfs:comment>Descriptors that consistently produce certain styles</rdfs:comment>
+        <rdfs:label>Style modifiers</rdfs:label>
         <peo:reference>https://arxiv.org/abs/2204.13988</peo:reference>
     </owl:Class>
     
@@ -2232,8 +2211,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#system_2_attention_prompting">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#prompting_technique"/>
-        <rdfs:label>System-2-Attention prompting</rdfs:label>
         <rdfs:comment>Technique that enables large language models (LLMs) to focus only on relevant parts of the input context by regenerating it to exclude distracting or biased information, thereby improving the factual accuracy and objectivity of the model&apos;s responses.</rdfs:comment>
+        <rdfs:label>System-2-Attention prompting</rdfs:label>
         <peo:reference>https://arxiv.org/abs/2311.11829</peo:reference>
     </owl:Class>
     
@@ -2255,8 +2234,8 @@
                 <owl:someValuesFrom rdf:resource="https://w3id.org/peo#transformer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label>T5</rdfs:label>
         <rdfs:comment>(Text-To-Text Transfer Transformer) A Google model where every NLP task is cast as a text-to-text problem, known for its adaptability across diverse tasks.</rdfs:comment>
+        <rdfs:label>T5</rdfs:label>
         <peo:paper>https://jmlr.org/papers/volume21/20-074/20-074.pdf</peo:paper>
         <peo:website>https://huggingface.co/t5-base</peo:website>
     </owl:Class>
@@ -2267,8 +2246,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#take_step_back_prompting">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#prompting_technique"/>
-        <rdfs:label>Take a step back prompting</rdfs:label>
         <rdfs:comment>Technique that enhances reasoning in large language models by prompting them to abstract high-level concepts from specific details to guide problem-solving.</rdfs:comment>
+        <rdfs:label>Take a step back prompting</rdfs:label>
         <peo:reference>https://arxiv.org/abs/2310.06117</peo:reference>
     </owl:Class>
     
@@ -2277,8 +2256,8 @@
     <!-- https://w3id.org/peo#task -->
 
     <owl:Class rdf:about="https://w3id.org/peo#task">
-        <rdfs:label>Task</rdfs:label>
         <rdfs:comment>Task that has to be exxecuted by a large language model.</rdfs:comment>
+        <rdfs:label>Task</rdfs:label>
     </owl:Class>
     
 
@@ -2287,8 +2266,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#text_explanation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#text_task"/>
-        <rdfs:label>Text explanation</rdfs:label>
         <rdfs:comment>Explanation of the content of a text</rdfs:comment>
+        <rdfs:label>Text explanation</rdfs:label>
     </owl:Class>
     
 
@@ -2297,8 +2276,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#text_generation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#text_task"/>
-        <rdfs:label>Text generation</rdfs:label>
         <rdfs:comment>Generation of text starting from a prompt.</rdfs:comment>
+        <rdfs:label>Text generation</rdfs:label>
     </owl:Class>
     
 
@@ -2307,8 +2286,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#text_processing">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#capability"/>
-        <rdfs:label>Text processing</rdfs:label>
         <rdfs:comment>Capability to process text and documents with text inside.</rdfs:comment>
+        <rdfs:label>Text processing</rdfs:label>
     </owl:Class>
     
 
@@ -2317,8 +2296,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#text_summarization">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#text_task"/>
-        <rdfs:label>Text summarization</rdfs:label>
         <rdfs:comment>Summarization of text starting from a prompt.</rdfs:comment>
+        <rdfs:label>Text summarization</rdfs:label>
     </owl:Class>
     
 
@@ -2327,8 +2306,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#text_task">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#task"/>
-        <rdfs:label>Text task</rdfs:label>
         <rdfs:comment>Task involving text.</rdfs:comment>
+        <rdfs:label>Text task</rdfs:label>
     </owl:Class>
     
 
@@ -2337,8 +2316,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#text_translation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#text_task"/>
-        <rdfs:label>Text translation</rdfs:label>
         <rdfs:comment>Translation of a text from a language to another.</rdfs:comment>
+        <rdfs:label>Text translation</rdfs:label>
     </owl:Class>
     
 
@@ -2347,8 +2326,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#thread_of_thought_prompting">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#prompting_technique"/>
-        <rdfs:label>Thread of thought prompting</rdfs:label>
         <rdfs:comment>Technique where a model maintains a cohesive line of reasoning across multiple prompts or turns, allowing it to build on previous responses and sustain continuity in complex, multi-step tasks or dialogues.</rdfs:comment>
+        <rdfs:label>Thread of thought prompting</rdfs:label>
         <peo:reference>https://arxiv.org/abs/2311.08734</peo:reference>
     </owl:Class>
     
@@ -2358,8 +2337,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#transformer">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#base_model"/>
-        <rdfs:label>Transformer</rdfs:label>
         <rdfs:comment>A neural network architecture that uses self-attention mechanisms to process sequential data in parallel, effectively capturing long-range dependencies</rdfs:comment>
+        <rdfs:label>Transformer</rdfs:label>
         <peo:reference>https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)</peo:reference>
     </owl:Class>
     
@@ -2369,8 +2348,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#transformer_xl">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#transformer"/>
-        <rdfs:label>Transformer XL</rdfs:label>
         <rdfs:comment>Variant of the Transformer model designed to handle longer sequences by introducing segment-level recurrence and relative positional embeddings, enabling better context retention and improved efficiency in language modeling tasks</rdfs:comment>
+        <rdfs:label>Transformer XL</rdfs:label>
         <peo:reference>https://arxiv.org/abs/1901.02860</peo:reference>
     </owl:Class>
     
@@ -2380,8 +2359,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#tree_of_thoughts_prompting">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#prompting_technique"/>
-        <rdfs:label>Tree of Thoughts prompting</rdfs:label>
         <rdfs:comment>Technique that involves breaking down complex problems into a structured tree of decisions, allowing an AI model to explore multiple reasoning paths to reach an optimal solution.</rdfs:comment>
+        <rdfs:label>Tree of Thoughts prompting</rdfs:label>
         <peo:reference>https://arxiv.org/abs/2305.10601</peo:reference>
     </owl:Class>
     
@@ -2391,8 +2370,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#university">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#organization"/>
-        <rdfs:label>University</rdfs:label>
         <rdfs:comment>A higher education institution dedicated to advanced learning, research, and the development of specialized knowledge and skills</rdfs:comment>
+        <rdfs:label>University</rdfs:label>
     </owl:Class>
     
 
@@ -2413,8 +2392,8 @@
                 <owl:someValuesFrom rdf:resource="https://w3id.org/peo#transformer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label>VALL-E</rdfs:label>
         <rdfs:comment>VALL-E is a text-to-speech model that synthesizes high-quality speech from text input.</rdfs:comment>
+        <rdfs:label>VALL-E</rdfs:label>
         <peo:paper>n.a.</peo:paper>
         <peo:website>https://www.microsoft.com/en-us/research/project/vall-e-x/vall-e-r/</peo:website>
     </owl:Class>
@@ -2437,8 +2416,8 @@
                 <owl:someValuesFrom rdf:resource="https://w3id.org/peo#transformer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label>Vicuna</rdfs:label>
         <rdfs:comment>Open-source conversational model that provides a high-quality chatbot experience.</rdfs:comment>
+        <rdfs:label>Vicuna</rdfs:label>
         <peo:paper>n.a.</peo:paper>
         <peo:website>https://vicuna.lmsys.org/</peo:website>
     </owl:Class>
@@ -2449,8 +2428,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#video_explanation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#video_task"/>
-        <rdfs:label>Video explanation</rdfs:label>
         <rdfs:comment>Explanation of the content of a video.</rdfs:comment>
+        <rdfs:label>Video explanation</rdfs:label>
     </owl:Class>
     
 
@@ -2459,8 +2438,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#video_generation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#video_task"/>
-        <rdfs:label>Video generation</rdfs:label>
         <rdfs:comment>Generation of a video starting from a text prompt.</rdfs:comment>
+        <rdfs:label>Video generation</rdfs:label>
     </owl:Class>
     
 
@@ -2469,8 +2448,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#video_processing">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#capability"/>
-        <rdfs:label>Video processing</rdfs:label>
         <rdfs:comment>Capability to process video files.</rdfs:comment>
+        <rdfs:label>Video processing</rdfs:label>
     </owl:Class>
     
 
@@ -2479,8 +2458,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#video_task">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#task"/>
-        <rdfs:label>Video task</rdfs:label>
         <rdfs:comment>Task involving video processing.</rdfs:comment>
+        <rdfs:label>Video task</rdfs:label>
     </owl:Class>
     
 
@@ -2489,8 +2468,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#vit_encoder">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#encoder"/>
-        <rdfs:label>ViT Encoder</rdfs:label>
         <rdfs:comment>A Vision Transformer encoder that splits an image into patches, treats them as tokens, and processes them using self-attention mechanisms to learn spatial and semantic relationships.</rdfs:comment>
+        <rdfs:label>ViT Encoder</rdfs:label>
         <peo:reference>https://en.wikipedia.org/wiki/Vision_transformer</peo:reference>
     </owl:Class>
     
@@ -2512,8 +2491,8 @@
                 <owl:someValuesFrom rdf:resource="https://w3id.org/peo#transformer_xl"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label>XLNet</rdfs:label>
         <rdfs:comment>Generalized autoregressive model that captures bidirectional context for NLP tasks.</rdfs:comment>
+        <rdfs:label>XLNet</rdfs:label>
         <peo:paper>n.a.</peo:paper>
         <peo:website>https://github.com/zihangdai/xlnet</peo:website>
     </owl:Class>
@@ -2524,8 +2503,8 @@
 
     <owl:Class rdf:about="https://w3id.org/peo#zero_shot_prompting">
         <rdfs:subClassOf rdf:resource="https://w3id.org/peo#prompting_technique"/>
-        <rdfs:label>Zero shot prompting</rdfs:label>
         <rdfs:comment>Technique where an AI model generates responses or performs tasks without any specific examples, relying solely on the instructions given in the prompt.</rdfs:comment>
+        <rdfs:label>Zero shot prompting</rdfs:label>
         <peo:reference>https://www.promptingguide.ai/techniques/zeroshot</peo:reference>
     </owl:Class>
     

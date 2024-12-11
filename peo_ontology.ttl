@@ -15,8 +15,7 @@
                          rdfs:label "PEO ontology: an ontology for prompt engineering and large language models." ;
                          owl:versionInfo 1.0 ;
                          peo:creator "Simone Gramegna" ;
-                         peo:language "english" ;
-                         peo:license "GPL-3.0 license" .
+                         peo:language "english" .
 
 #################################################################
 #    Annotation properties
@@ -185,7 +184,8 @@ peo:has_response rdf:type owl:ObjectProperty ;
 ###  https://w3id.org/peo#has_variant
 peo:has_variant rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf owl:topObjectProperty ;
-                rdf:type owl:IrreflexiveProperty ;
+                rdf:type owl:SymmetricProperty ,
+                         owl:IrreflexiveProperty ;
                 rdfs:domain peo:large_language_model ;
                 rdfs:range peo:large_language_model ;
                 rdfs:comment "Relation between two large language models (x and y), where x has y as another version." ;
@@ -740,6 +740,7 @@ peo:code_explanation rdf:type owl:Class ;
 ###  https://w3id.org/peo#code_generation
 peo:code_generation rdf:type owl:Class ;
                     rdfs:subClassOf peo:code_task ;
+                    rdfs:comment "Generation of code" ;
                     rdfs:label "Code generation" .
 
 
@@ -1354,14 +1355,6 @@ peo:pixel_decoder rdf:type owl:Class ;
                   peo:reference "https://arxiv.org/abs/2212.11270" .
 
 
-###  https://w3id.org/peo#plan_and_solve_prompting
-peo:plan_and_solve_prompting rdf:type owl:Class ;
-                             rdfs:subClassOf peo:prompting_technique ;
-                             rdfs:comment "Technique that guides large language models to first devise a plan that breaks down a complex task into subtasks, then execute the plan step-by-step for improved reasoning accuracy." ;
-                             rdfs:label "Plan-and-Solve prompting" ;
-                             peo:reference "https://arxiv.org/abs/2305.04091" .
-
-
 ###  https://w3id.org/peo#program_of_thoughts_prompting
 peo:program_of_thoughts_prompting rdf:type owl:Class ;
                                   rdfs:subClassOf peo:code_prompting ;
@@ -1451,14 +1444,6 @@ peo:repetition rdf:type owl:Class ;
                rdfs:comment "Repeating the same word in a image prompt in order to augment some aspects" ;
                rdfs:label "Repetition" ;
                peo:reference "https://arxiv.org/abs/2204.13988" .
-
-
-###  https://w3id.org/peo#rephrase_and_respond_prompting
-peo:rephrase_and_respond_prompting rdf:type owl:Class ;
-                                   rdfs:subClassOf peo:prompting_technique ;
-                                   rdfs:comment "Technique that allows an LLM to rephrase a user's question for clarity before responding, improving accuracy and reducing ambiguities." ;
-                                   rdfs:label "Rephrase and Respond prompting" ;
-                                   peo:reference "https://arxiv.org/abs/2311.04205" .
 
 
 ###  https://w3id.org/peo#research_institution
