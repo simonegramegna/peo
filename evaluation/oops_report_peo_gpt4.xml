@@ -1,0 +1,69 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:oops="http://oops.linkeddata.es/def#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#" >
+    <rdf:Description rdf:about="http://oops.linkeddata.es/def#warning">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://oops.linkeddata.es/data/25e38114-c282-4e8a-b866-7e3a98d73dd4">
+        <oops:hasPitfall rdf:resource="http://oops.linkeddata.es/data/d8843575-aa14-4474-81da-a8003c3d604c"/>
+        <oops:hasPitfall rdf:resource="http://oops.linkeddata.es/data/8d697711-b60f-4616-9538-404dc907721f"/>
+        <oops:hasPitfall rdf:resource="http://oops.linkeddata.es/data/fb3cefaf-c60c-4901-b557-f178e9a3f446"/>
+        <oops:hasPitfall rdf:resource="http://oops.linkeddata.es/data/6824edbc-23b4-40d4-b967-ea2e315a69b8"/>
+        <rdf:type rdf:resource="http://oops.linkeddata.es/def#response"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://oops.linkeddata.es/data/6824edbc-23b4-40d4-b967-ea2e315a69b8">
+        <oops:hasAffectedElement rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://w3id.org/peo#PromptingTechnique</oops:hasAffectedElement>
+        <oops:hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ontology elements (classes, object properties and datatype properties) are created isolated, with no relation to the rest of the ontology.	</oops:hasDescription>
+        <oops:hasAffectedElement rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://w3id.org/peo#Task</oops:hasAffectedElement>
+        <oops:hasImportanceLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Minor</oops:hasImportanceLevel>
+        <oops:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Creating unconnected ontology elements</oops:hasName>
+        <oops:hasCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P04</oops:hasCode>
+        <oops:hasAffectedElement rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://w3id.org/peo#PromptEngineering</oops:hasAffectedElement>
+        <oops:hasNumberAffectedElements rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</oops:hasNumberAffectedElements>
+        <rdf:type rdf:resource="http://oops.linkeddata.es/def#pitfall"/>
+        <oops:hasAffectedElement rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://w3id.org/peo#prompt_engineering</oops:hasAffectedElement>
+        <oops:hasAffectedElement rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://w3id.org/peo#Prompt</oops:hasAffectedElement>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://oops.linkeddata.es/data/8d697711-b60f-4616-9538-404dc907721f">
+        <oops:hasImportanceLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Minor</oops:hasImportanceLevel>
+        <oops:hasAffectedElement rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">There are elements following different naming conventions as for example: https://w3id.org/peo#blip-2 https://w3id.org/peo#Prompt</oops:hasAffectedElement>
+        <oops:hasNumberAffectedElements rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</oops:hasNumberAffectedElements>
+        <oops:hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The ontology elements are not named following the same convention (for example CamelCase or use of delimiters as &amp;quot;-&amp;quot; or &amp;quot;_&amp;quot;) . Some notions about naming conventions are provided in [2].	</oops:hasDescription>
+        <oops:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Using different naming conventions in the ontology</oops:hasName>
+        <oops:hasCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P22</oops:hasCode>
+        <rdf:type rdf:resource="http://oops.linkeddata.es/def#pitfall"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://oops.linkeddata.es/def#pitfall">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://oops.linkeddata.es/data/d8843575-aa14-4474-81da-a8003c3d604c">
+        <rdf:type rdf:resource="http://oops.linkeddata.es/def#pitfall"/>
+        <oops:hasCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P34</oops:hasCode>
+        <oops:hasAffectedElement rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/2003/11/swrl#Variable</oops:hasAffectedElement>
+        <oops:hasImportanceLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Important</oops:hasImportanceLevel>
+        <oops:hasAffectedElement rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/2003/11/swrl#IndividualPropertyAtom</oops:hasAffectedElement>
+        <oops:hasNumberAffectedElements rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</oops:hasNumberAffectedElements>
+        <oops:hasAffectedElement rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/2003/11/swrl#AtomList</oops:hasAffectedElement>
+        <oops:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Untyped class</oops:hasName>
+        <oops:hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An ontology element is used as a class without having been explicitly declared as such using the primitives owl:Class or rdfs:Class. This pitfall is related with the common problems listed in [8].	</oops:hasDescription>
+        <oops:hasAffectedElement rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/2003/11/swrl#Imp</oops:hasAffectedElement>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://oops.linkeddata.es/def#suggestion">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://oops.linkeddata.es/data/fb3cefaf-c60c-4901-b557-f178e9a3f446">
+        <oops:hasAffectedElement rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://w3id.org/peo#PromptingTechnique</oops:hasAffectedElement>
+        <oops:hasAffectedElement rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://w3id.org/peo#PromptEngineering</oops:hasAffectedElement>
+        <rdf:type rdf:resource="http://oops.linkeddata.es/def#pitfall"/>
+        <oops:hasAffectedElement rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://w3id.org/peo#Task</oops:hasAffectedElement>
+        <oops:hasNumberAffectedElements rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</oops:hasNumberAffectedElements>
+        <oops:hasCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P08</oops:hasCode>
+        <oops:hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This pitfall consists in creating an ontology element and failing to provide human readable annotations attached to it. Consequently, ontology elements lack annotation properties that label them (e.g. rdfs:label, lemon:LexicalEntry, skos:prefLabel or skos:altLabel) or that define them (e.g. rdfs:comment or dc:description). This pitfall is related to the guidelines provided in [5].	</oops:hasDescription>
+        <oops:hasAffectedElement rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://w3id.org/peo#Prompt</oops:hasAffectedElement>
+        <oops:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Missing annotations</oops:hasName>
+        <oops:hasImportanceLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Minor</oops:hasImportanceLevel>
+    </rdf:Description>
+</rdf:RDF>
