@@ -8,9 +8,11 @@
 @prefix swrl: <http://www.w3.org/2003/11/swrl#> .
 @prefix swrla: <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#> .
 @prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
+@prefix terms: <http://purl.org/dc/terms/> .
 @base <https://w3id.org/peo#/> .
 
 <https://w3id.org/peo#> rdf:type owl:Ontology ;
+                         terms:license "https://www.gnu.org/licenses/gpl-3.0.html" ;
                          rdfs:comment "The PEO ontology is a modern ontology that covers state-of-art prompt engineering techniques and large language models. The ontology is designed to support students, researchers and developers who want to know more about prompt engineering, applying prompting techniques in solving tasks." ;
                          rdfs:label "PEO ontology: an ontology for prompt engineering and large language models." ;
                          owl:versionInfo 1.0 ;
@@ -20,6 +22,10 @@
 #################################################################
 #    Annotation properties
 #################################################################
+
+###  http://purl.org/dc/terms/license
+terms:license rdf:type owl:AnnotationProperty .
+
 
 ###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
 swrla:isRuleEnabled rdf:type owl:AnnotationProperty .
@@ -52,6 +58,15 @@ peo:website rdf:type owl:AnnotationProperty .
 #################################################################
 #    Object Properties
 #################################################################
+
+###  https://w3id.org/peo#applied_to
+peo:applied_to rdf:type owl:ObjectProperty ;
+               owl:inverseOf peo:supports ;
+               rdfs:domain peo:prompt_engineering ;
+               rdfs:range peo:large_language_model ;
+               rdfs:comment "Relation between prompt engineering and large language model" ;
+               rdfs:label "applied_to" .
+
 
 ###  https://w3id.org/peo#based_on
 peo:based_on rdf:type owl:ObjectProperty ;
@@ -365,6 +380,14 @@ peo:solves rdf:type owl:ObjectProperty ;
            rdfs:range peo:task ;
            rdfs:comment "Relation between a prompting technique and a task, where the technique solves that task." ;
            rdfs:label "solves_task" .
+
+
+###  https://w3id.org/peo#supports
+peo:supports rdf:type owl:ObjectProperty ;
+             rdfs:domain peo:large_language_model ;
+             rdfs:range peo:prompt_engineering ;
+             rdfs:comment "inverse relation of prompt engineering and large language model" ;
+             rdfs:label "supports" .
 
 
 ###  https://w3id.org/peo#uses_model
@@ -1378,6 +1401,10 @@ peo:prompt rdf:type owl:Class ;
 
 ###  https://w3id.org/peo#prompt_engineering
 peo:prompt_engineering rdf:type owl:Class ;
+                       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                         owl:onProperty peo:applied_to ;
+                                         owl:someValuesFrom peo:large_language_model
+                                       ] ;
                        rdfs:comment "Practice of crafting and optimizing input prompts to guide AI models, particularly large language models, to produce desired outputs. It involves understanding the model's behavior and leveraging techniques like few-shot learning, zero-shot prompting, or specific formatting to achieve accurate, relevant, and context-aware results for various tasks." ;
                        rdfs:label "Prompt engineering" .
 
