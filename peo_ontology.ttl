@@ -104,6 +104,12 @@ peo:develops rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf owl:topObjectProperty ;
              rdfs:domain peo:organization ;
              rdfs:range peo:large_language_model ;
+             owl:propertyChainAxiom ( peo:develops
+                                      peo:has_variant
+                                    ) ,
+                                    ( peo:is_organization_of
+                                      peo:develops
+                                    ) ;
              rdfs:comment "Relationship between a large language model and an organization, where the organization develops the model." ;
              rdfs:label "develops" .
 
@@ -121,7 +127,7 @@ peo:evolved_from rdf:type owl:ObjectProperty ;
 
 ###  https://w3id.org/peo#evolves
 peo:evolves rdf:type owl:ObjectProperty ;
-            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:subPropertyOf peo:has_variant ;
             rdf:type owl:TransitiveProperty ;
             rdfs:domain peo:large_language_model ;
             rdfs:range peo:large_language_model ;
@@ -145,6 +151,10 @@ peo:has_capability rdf:type owl:ObjectProperty ;
                    owl:inverseOf peo:is_capability ;
                    rdfs:domain peo:large_language_model ;
                    rdfs:range peo:capability ;
+                   owl:propertyChainAxiom ( [ owl:inverseOf peo:evolves
+                                            ]
+                                            peo:has_capability
+                                          ) ;
                    rdfs:comment "Relationship between a large language model and a capability, where the llm has that capability." ;
                    rdfs:label "has_capability" .
 
@@ -155,6 +165,9 @@ peo:has_context rdf:type owl:ObjectProperty ;
                 owl:inverseOf peo:has_prompt ;
                 rdfs:domain peo:prompt ;
                 rdfs:range peo:chat ;
+                owl:propertyChainAxiom ( peo:prompt_followedby_prompt
+                                         peo:has_context
+                                       ) ;
                 rdfs:comment "Relationship between a prompt and a chat, where the prompt has as context the chat." ;
                 rdfs:label "has_context" .
 
@@ -202,8 +215,8 @@ peo:has_response rdf:type owl:ObjectProperty ;
 ###  https://w3id.org/peo#has_variant
 peo:has_variant rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf owl:topObjectProperty ;
-                rdf:type owl:SymmetricProperty ,
-                         owl:IrreflexiveProperty ;
+                owl:inverseOf peo:is_variant ;
+                rdf:type owl:TransitiveProperty ;
                 rdfs:domain peo:large_language_model ;
                 rdfs:range peo:large_language_model ;
                 rdfs:comment "Relation between two large language models (x and y), where x has y as another version." ;
@@ -243,6 +256,9 @@ peo:is_response_of rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf owl:topObjectProperty ;
                    rdfs:domain peo:response ;
                    rdfs:range peo:chat ;
+                   owl:propertyChainAxiom ( peo:response_followedby_prompt
+                                            peo:has_context
+                                          ) ;
                    rdfs:comment "Response belongs to a chat" ;
                    rdfs:label "is_response_of" .
 
@@ -267,12 +283,24 @@ peo:is_used_in_prompt rdf:type owl:ObjectProperty ;
                       rdfs:label "is_used_in_prompt" .
 
 
+###  https://w3id.org/peo#is_variant
+peo:is_variant rdf:type owl:ObjectProperty ,
+                        owl:TransitiveProperty ;
+               rdfs:domain peo:large_language_model ;
+               rdfs:range peo:large_language_model ;
+               rdfs:comment "Inverse relation of has_variant" ;
+               rdfs:label "is_variant" .
+
+
 ###  https://w3id.org/peo#processed_by
 peo:processed_by rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf owl:topObjectProperty ;
                  owl:inverseOf peo:processes ;
                  rdfs:domain peo:prompt ;
                  rdfs:range peo:large_language_model ;
+                 owl:propertyChainAxiom ( peo:has_context
+                                          peo:uses_model
+                                        ) ;
                  rdfs:comment "Relation between a prompt and a large language model, where the prompt is given as input to the large language model" ;
                  rdfs:label "processed_by" .
 
@@ -303,6 +331,9 @@ peo:prompt_followedby_response rdf:type owl:ObjectProperty ;
                                owl:inverseOf peo:response_follows_prompt ;
                                rdfs:domain peo:prompt ;
                                rdfs:range peo:response ;
+                               owl:propertyChainAxiom ( peo:prompt_followedby_prompt
+                                                        peo:prompt_follows_response
+                                                      ) ;
                                rdfs:comment "Prompt is after response" ;
                                rdfs:label "prompt_followedby_response" .
 
@@ -359,6 +390,9 @@ peo:response_generated_using rdf:type owl:ObjectProperty ;
                              rdfs:subPropertyOf owl:topObjectProperty ;
                              rdfs:domain peo:response ;
                              rdfs:range peo:large_language_model ;
+                             owl:propertyChainAxiom ( peo:response_followedby_prompt
+                                                      peo:processed_by
+                                                    ) ;
                              rdfs:comment "Response generated using a large language model" ;
                              rdfs:label "response_generated_using" .
 
@@ -4594,314 +4628,5 @@ peo:zs_prompting_4 rdf:type owl:NamedIndividual ,
               )
 ] .
 
-
-#################################################################
-#    Rules
-#################################################################
-
-:c rdf:type swrl:Variable .
-
-:x rdf:type swrl:Variable .
-
-:y rdf:type swrl:Variable .
-
-:o1 rdf:type swrl:Variable .
-
-:o2 rdf:type swrl:Variable .
-
-:llm rdf:type swrl:Variable .
-
-:m1 rdf:type swrl:Variable .
-
-:m2 rdf:type swrl:Variable .
-
-:r rdf:type swrl:Variable .
-
-:p rdf:type swrl:Variable .
-
-:m rdf:type swrl:Variable .
-
-[ swrla:isRuleEnabled "true"^^xsd:boolean ;
-   rdfs:comment "" ;
-   rdfs:label "S1" ;
-   rdf:type swrl:Imp ;
-   swrl:body [ rdf:type swrl:AtomList ;
-               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate peo:develops ;
-                           swrl:argument1 :c ;
-                           swrl:argument2 :x
-                         ] ;
-               rdf:rest [ rdf:type swrl:AtomList ;
-                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                                      swrl:propertyPredicate peo:has_variant ;
-                                      swrl:argument1 :x ;
-                                      swrl:argument2 :y
-                                    ] ;
-                          rdf:rest rdf:nil
-                        ]
-             ] ;
-   swrl:head [ rdf:type swrl:AtomList ;
-               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate peo:develops ;
-                           swrl:argument1 :c ;
-                           swrl:argument2 :y
-                         ] ;
-               rdf:rest rdf:nil
-             ]
- ] .
-
-[ swrla:isRuleEnabled "true"^^xsd:boolean ;
-   rdfs:comment "" ;
-   rdfs:label "S3" ;
-   rdf:type swrl:Imp ;
-   swrl:body [ rdf:type swrl:AtomList ;
-               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate peo:is_organization_of ;
-                           swrl:argument1 :o1 ;
-                           swrl:argument2 :o2
-                         ] ;
-               rdf:rest [ rdf:type swrl:AtomList ;
-                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                                      swrl:propertyPredicate peo:develops ;
-                                      swrl:argument1 :o1 ;
-                                      swrl:argument2 :llm
-                                    ] ;
-                          rdf:rest rdf:nil
-                        ]
-             ] ;
-   swrl:head [ rdf:type swrl:AtomList ;
-               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate peo:develops ;
-                           swrl:argument1 :o2 ;
-                           swrl:argument2 :llm
-                         ] ;
-               rdf:rest rdf:nil
-             ]
- ] .
-
-[ swrla:isRuleEnabled "true"^^xsd:boolean ;
-   rdfs:comment "" ;
-   rdfs:label "S4" ;
-   rdf:type swrl:Imp ;
-   swrl:body [ rdf:type swrl:AtomList ;
-               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate peo:evolves ;
-                           swrl:argument1 :m1 ;
-                           swrl:argument2 :m2
-                         ] ;
-               rdf:rest [ rdf:type swrl:AtomList ;
-                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                                      swrl:propertyPredicate peo:has_capability ;
-                                      swrl:argument1 :m1 ;
-                                      swrl:argument2 :c
-                                    ] ;
-                          rdf:rest rdf:nil
-                        ]
-             ] ;
-   swrl:head [ rdf:type swrl:AtomList ;
-               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate peo:has_capability ;
-                           swrl:argument1 :m2 ;
-                           swrl:argument2 :c
-                         ] ;
-               rdf:rest rdf:nil
-             ]
- ] .
-
-[ swrla:isRuleEnabled "true"^^xsd:boolean ;
-   rdfs:comment "" ;
-   rdfs:label "S2" ;
-   rdf:type swrl:Imp ;
-   swrl:body [ rdf:type swrl:AtomList ;
-               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate peo:evolves ;
-                           swrl:argument1 :x ;
-                           swrl:argument2 :y
-                         ] ;
-               rdf:rest rdf:nil
-             ] ;
-   swrl:head [ rdf:type swrl:AtomList ;
-               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate peo:has_variant ;
-                           swrl:argument1 :x ;
-                           swrl:argument2 :y
-                         ] ;
-               rdf:rest rdf:nil
-             ]
- ] .
-
-[ swrla:isRuleEnabled "true"^^xsd:boolean ;
-   rdfs:comment "" ;
-   rdfs:label "S10" ;
-   rdf:type swrl:Imp ;
-   swrl:body [ rdf:type swrl:AtomList ;
-               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate peo:evolves ;
-                           swrl:argument1 :x ;
-                           swrl:argument2 :y
-                         ] ;
-               rdf:rest [ rdf:type swrl:AtomList ;
-                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                                      swrl:propertyPredicate peo:has_capability ;
-                                      swrl:argument1 :x ;
-                                      swrl:argument2 :c
-                                    ] ;
-                          rdf:rest rdf:nil
-                        ]
-             ] ;
-   swrl:head [ rdf:type swrl:AtomList ;
-               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate peo:has_capability ;
-                           swrl:argument1 :y ;
-                           swrl:argument2 :c
-                         ] ;
-               rdf:rest rdf:nil
-             ]
- ] .
-
-[ swrla:isRuleEnabled "true"^^xsd:boolean ;
-   rdfs:comment "" ;
-   rdfs:label "S6" ;
-   rdf:type swrl:Imp ;
-   swrl:body [ rdf:type swrl:AtomList ;
-               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate peo:response_followedby_prompt ;
-                           swrl:argument1 :r ;
-                           swrl:argument2 :p
-                         ] ;
-               rdf:rest [ rdf:type swrl:AtomList ;
-                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                                      swrl:propertyPredicate peo:has_context ;
-                                      swrl:argument1 :p ;
-                                      swrl:argument2 :c
-                                    ] ;
-                          rdf:rest rdf:nil
-                        ]
-             ] ;
-   swrl:head [ rdf:type swrl:AtomList ;
-               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate peo:is_response_of ;
-                           swrl:argument1 :r ;
-                           swrl:argument2 :c
-                         ] ;
-               rdf:rest rdf:nil
-             ]
- ] .
-
-[ swrla:isRuleEnabled "true"^^xsd:boolean ;
-   rdfs:comment "" ;
-   rdfs:label "S5" ;
-   rdf:type swrl:Imp ;
-   swrl:body [ rdf:type swrl:AtomList ;
-               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate peo:has_context ;
-                           swrl:argument1 :p ;
-                           swrl:argument2 :c
-                         ] ;
-               rdf:rest [ rdf:type swrl:AtomList ;
-                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                                      swrl:propertyPredicate peo:uses_model ;
-                                      swrl:argument1 :c ;
-                                      swrl:argument2 :m
-                                    ] ;
-                          rdf:rest rdf:nil
-                        ]
-             ] ;
-   swrl:head [ rdf:type swrl:AtomList ;
-               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate peo:processed_by ;
-                           swrl:argument1 :p ;
-                           swrl:argument2 :m
-                         ] ;
-               rdf:rest rdf:nil
-             ]
- ] .
-
-[ swrla:isRuleEnabled "true"^^xsd:boolean ;
-   rdfs:comment "" ;
-   rdfs:label "S8" ;
-   rdf:type swrl:Imp ;
-   swrl:body [ rdf:type swrl:AtomList ;
-               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate peo:prompt_followedby_prompt ;
-                           swrl:argument1 :x ;
-                           swrl:argument2 :y
-                         ] ;
-               rdf:rest [ rdf:type swrl:AtomList ;
-                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                                      swrl:propertyPredicate peo:has_context ;
-                                      swrl:argument1 :y ;
-                                      swrl:argument2 :c
-                                    ] ;
-                          rdf:rest rdf:nil
-                        ]
-             ] ;
-   swrl:head [ rdf:type swrl:AtomList ;
-               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate peo:has_context ;
-                           swrl:argument1 :x ;
-                           swrl:argument2 :c
-                         ] ;
-               rdf:rest rdf:nil
-             ]
- ] .
-
-[ swrla:isRuleEnabled "true"^^xsd:boolean ;
-   rdfs:comment "" ;
-   rdfs:label "S7" ;
-   rdf:type swrl:Imp ;
-   swrl:body [ rdf:type swrl:AtomList ;
-               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate peo:response_followedby_prompt ;
-                           swrl:argument1 :r ;
-                           swrl:argument2 :p
-                         ] ;
-               rdf:rest [ rdf:type swrl:AtomList ;
-                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                                      swrl:propertyPredicate peo:processed_by ;
-                                      swrl:argument1 :p ;
-                                      swrl:argument2 :m
-                                    ] ;
-                          rdf:rest rdf:nil
-                        ]
-             ] ;
-   swrl:head [ rdf:type swrl:AtomList ;
-               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate peo:response_generated_using ;
-                           swrl:argument1 :r ;
-                           swrl:argument2 :m
-                         ] ;
-               rdf:rest rdf:nil
-             ]
- ] .
-
-[ swrla:isRuleEnabled "true"^^xsd:boolean ;
-   rdfs:comment "" ;
-   rdfs:label "S9" ;
-   rdf:type swrl:Imp ;
-   swrl:body [ rdf:type swrl:AtomList ;
-               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate peo:prompt_followedby_prompt ;
-                           swrl:argument1 :x ;
-                           swrl:argument2 :y
-                         ] ;
-               rdf:rest [ rdf:type swrl:AtomList ;
-                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                                      swrl:propertyPredicate peo:prompt_follows_response ;
-                                      swrl:argument1 :y ;
-                                      swrl:argument2 :r
-                                    ] ;
-                          rdf:rest rdf:nil
-                        ]
-             ] ;
-   swrl:head [ rdf:type swrl:AtomList ;
-               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate peo:prompt_followedby_response ;
-                           swrl:argument1 :x ;
-                           swrl:argument2 :r
-                         ] ;
-               rdf:rest rdf:nil
-             ]
- ] .
 
 ###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
