@@ -12,7 +12,7 @@
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
      xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://w3id.org/peo#">
-        <terms:license>https://www.gnu.org/licenses/gpl-3.0.html</terms:license>
+        <terms:license>https://creativecommons.org/licenses/by/4.0/</terms:license>
         <rdfs:comment>The PEO ontology is a modern ontology that covers state-of-art prompt engineering techniques and large language models. The ontology is designed to support students, researchers and developers who want to know more about prompt engineering, applying prompting techniques in solving tasks.</rdfs:comment>
         <rdfs:label>PEO ontology: an ontology for prompt engineering and large language models.</rdfs:label>
         <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</owl:versionInfo>
@@ -212,9 +212,7 @@
         <rdfs:domain rdf:resource="https://w3id.org/peo#large_language_model"/>
         <rdfs:range rdf:resource="https://w3id.org/peo#capability"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="https://w3id.org/peo#evolves"/>
-            </rdf:Description>
+            <rdf:Description rdf:about="https://w3id.org/peo#evolved_from"/>
             <rdf:Description rdf:about="https://w3id.org/peo#has_capability"/>
         </owl:propertyChainAxiom>
         <rdfs:comment>Relationship between a large language model and a capability, where the llm has that capability.</rdfs:comment>
